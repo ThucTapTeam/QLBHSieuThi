@@ -33,36 +33,37 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dataHangHoa = new Bunifu.Framework.UI.BunifuCustomDataGrid();
+            this.mASANPHAMDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tENSANPHAMDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sOLUONGDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.gIANHAPVAODataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.gIABANRADataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nGAYNHAPDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.isDelDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.hANGHOABindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.qLBHSieuThiDataSet_HANGHOA = new QLBanHangSieuThi.QLBHSieuThiDataSet_HANGHOA();
+            this.sieuThiDataSet_HangHoa = new QLBanHangSieuThi.SieuThiDataSet_HangHoa();
             this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.btnSearch = new Bunifu.Framework.UI.BunifuFlatButton();
             this.inputSearch = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.ddSearch = new Bunifu.Framework.UI.BunifuDropdown();
             this.label1 = new System.Windows.Forms.Label();
             this.bunifuElipse2 = new Bunifu.Framework.UI.BunifuElipse(this.components);
-            this.bunifuElipse3 = new Bunifu.Framework.UI.BunifuElipse(this.components);
-            this.bunifuElipse4 = new Bunifu.Framework.UI.BunifuElipse(this.components);
-            this.hANGHOATableAdapter = new QLBanHangSieuThi.QLBHSieuThiDataSet_HANGHOATableAdapters.HANGHOATableAdapter();
             this.bunifuFlatButton1 = new Bunifu.Framework.UI.BunifuFlatButton();
-            this.mASANPHAMDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tENSANPHAMDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.sOLUONGDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.gIANHAPVAODataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.gIABANRADataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nGAYNHAPDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnSave = new Bunifu.Framework.UI.BunifuFlatButton();
             this.btnInsert = new Bunifu.Framework.UI.BunifuFlatButton();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.txtMaSP = new System.Windows.Forms.TextBox();
+            this.txtGiaBan = new System.Windows.Forms.TextBox();
+            this.txtGiaNhap = new System.Windows.Forms.TextBox();
+            this.txtSL = new System.Windows.Forms.TextBox();
+            this.txtTenSP = new System.Windows.Forms.TextBox();
+            this.DPngNhap = new System.Windows.Forms.DateTimePicker();
             this.txtPanel = new System.Windows.Forms.Panel();
+            this.hANGHOATableAdapter = new QLBanHangSieuThi.SieuThiDataSet_HangHoaTableAdapters.HANGHOATableAdapter();
+            this.btnCancel = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.btnUpdate = new Bunifu.Framework.UI.BunifuFlatButton();
             ((System.ComponentModel.ISupportInitialize)(this.dataHangHoa)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.hANGHOABindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.qLBHSieuThiDataSet_HANGHOA)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sieuThiDataSet_HangHoa)).BeginInit();
             this.txtPanel.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -88,12 +89,13 @@
             this.dataHangHoa.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.dataHangHoa.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataHangHoa.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.mASANPHAMDataGridViewTextBoxColumn1,
+            this.mASANPHAMDataGridViewTextBoxColumn,
             this.tENSANPHAMDataGridViewTextBoxColumn,
             this.sOLUONGDataGridViewTextBoxColumn,
             this.gIANHAPVAODataGridViewTextBoxColumn,
             this.gIABANRADataGridViewTextBoxColumn,
-            this.nGAYNHAPDataGridViewTextBoxColumn});
+            this.nGAYNHAPDataGridViewTextBoxColumn,
+            this.isDelDataGridViewCheckBoxColumn});
             this.dataHangHoa.Cursor = System.Windows.Forms.Cursors.Hand;
             this.dataHangHoa.DataSource = this.hANGHOABindingSource;
             dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
@@ -116,16 +118,73 @@
             this.dataHangHoa.RowTemplate.Height = 20;
             this.dataHangHoa.Size = new System.Drawing.Size(933, 262);
             this.dataHangHoa.TabIndex = 13;
+            this.dataHangHoa.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataHangHoa_CellClick);
+            // 
+            // mASANPHAMDataGridViewTextBoxColumn
+            // 
+            this.mASANPHAMDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.mASANPHAMDataGridViewTextBoxColumn.DataPropertyName = "MASANPHAM";
+            this.mASANPHAMDataGridViewTextBoxColumn.HeaderText = "Mã sản phẩm";
+            this.mASANPHAMDataGridViewTextBoxColumn.Name = "mASANPHAMDataGridViewTextBoxColumn";
+            this.mASANPHAMDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // tENSANPHAMDataGridViewTextBoxColumn
+            // 
+            this.tENSANPHAMDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.tENSANPHAMDataGridViewTextBoxColumn.DataPropertyName = "TENSANPHAM";
+            this.tENSANPHAMDataGridViewTextBoxColumn.HeaderText = "Tên sản phẩm";
+            this.tENSANPHAMDataGridViewTextBoxColumn.Name = "tENSANPHAMDataGridViewTextBoxColumn";
+            this.tENSANPHAMDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // sOLUONGDataGridViewTextBoxColumn
+            // 
+            this.sOLUONGDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.sOLUONGDataGridViewTextBoxColumn.DataPropertyName = "SOLUONG";
+            this.sOLUONGDataGridViewTextBoxColumn.HeaderText = "Số lượng";
+            this.sOLUONGDataGridViewTextBoxColumn.Name = "sOLUONGDataGridViewTextBoxColumn";
+            this.sOLUONGDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // gIANHAPVAODataGridViewTextBoxColumn
+            // 
+            this.gIANHAPVAODataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.gIANHAPVAODataGridViewTextBoxColumn.DataPropertyName = "GIANHAPVAO";
+            this.gIANHAPVAODataGridViewTextBoxColumn.HeaderText = "Giá nhập vào";
+            this.gIANHAPVAODataGridViewTextBoxColumn.Name = "gIANHAPVAODataGridViewTextBoxColumn";
+            this.gIANHAPVAODataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // gIABANRADataGridViewTextBoxColumn
+            // 
+            this.gIABANRADataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.gIABANRADataGridViewTextBoxColumn.DataPropertyName = "GIABANRA";
+            this.gIABANRADataGridViewTextBoxColumn.HeaderText = "Giá bán ra";
+            this.gIABANRADataGridViewTextBoxColumn.Name = "gIABANRADataGridViewTextBoxColumn";
+            this.gIABANRADataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // nGAYNHAPDataGridViewTextBoxColumn
+            // 
+            this.nGAYNHAPDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.nGAYNHAPDataGridViewTextBoxColumn.DataPropertyName = "NGAYNHAP";
+            this.nGAYNHAPDataGridViewTextBoxColumn.HeaderText = "Ngày nhập";
+            this.nGAYNHAPDataGridViewTextBoxColumn.Name = "nGAYNHAPDataGridViewTextBoxColumn";
+            this.nGAYNHAPDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // isDelDataGridViewCheckBoxColumn
+            // 
+            this.isDelDataGridViewCheckBoxColumn.DataPropertyName = "IsDel";
+            this.isDelDataGridViewCheckBoxColumn.HeaderText = "IsDel";
+            this.isDelDataGridViewCheckBoxColumn.Name = "isDelDataGridViewCheckBoxColumn";
+            this.isDelDataGridViewCheckBoxColumn.ReadOnly = true;
+            this.isDelDataGridViewCheckBoxColumn.Width = 40;
             // 
             // hANGHOABindingSource
             // 
             this.hANGHOABindingSource.DataMember = "HANGHOA";
-            this.hANGHOABindingSource.DataSource = this.qLBHSieuThiDataSet_HANGHOA;
+            this.hANGHOABindingSource.DataSource = this.sieuThiDataSet_HangHoa;
             // 
-            // qLBHSieuThiDataSet_HANGHOA
+            // sieuThiDataSet_HangHoa
             // 
-            this.qLBHSieuThiDataSet_HANGHOA.DataSetName = "QLBHSieuThiDataSet_HANGHOA";
-            this.qLBHSieuThiDataSet_HANGHOA.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this.sieuThiDataSet_HangHoa.DataSetName = "SieuThiDataSet_HangHoa";
+            this.sieuThiDataSet_HangHoa.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // bunifuElipse1
             // 
@@ -205,7 +264,7 @@
             this.ddSearch.Name = "ddSearch";
             this.ddSearch.NomalColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(105)))), ((int)(((byte)(189)))));
             this.ddSearch.onHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(69)))), ((int)(((byte)(126)))));
-            this.ddSearch.selectedIndex = -1;
+            this.ddSearch.selectedIndex = 1;
             this.ddSearch.Size = new System.Drawing.Size(185, 48);
             this.ddSearch.TabIndex = 17;
             // 
@@ -222,18 +281,7 @@
             // bunifuElipse2
             // 
             this.bunifuElipse2.ElipseRadius = 12;
-            // 
-            // bunifuElipse3
-            // 
-            this.bunifuElipse3.ElipseRadius = 12;
-            // 
-            // bunifuElipse4
-            // 
-            this.bunifuElipse4.ElipseRadius = 12;
-            // 
-            // hANGHOATableAdapter
-            // 
-            this.hANGHOATableAdapter.ClearBeforeFill = true;
+            this.bunifuElipse2.TargetControl = this;
             // 
             // bunifuFlatButton1
             // 
@@ -269,53 +317,6 @@
             this.bunifuFlatButton1.Textcolor = System.Drawing.Color.White;
             this.bunifuFlatButton1.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bunifuFlatButton1.Click += new System.EventHandler(this.bunifuFlatButton1_Click);
-            // 
-            // mASANPHAMDataGridViewTextBoxColumn1
-            // 
-            this.mASANPHAMDataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.mASANPHAMDataGridViewTextBoxColumn1.DataPropertyName = "MASANPHAM";
-            this.mASANPHAMDataGridViewTextBoxColumn1.HeaderText = "Mã hàng hoá";
-            this.mASANPHAMDataGridViewTextBoxColumn1.Name = "mASANPHAMDataGridViewTextBoxColumn1";
-            this.mASANPHAMDataGridViewTextBoxColumn1.ReadOnly = true;
-            // 
-            // tENSANPHAMDataGridViewTextBoxColumn
-            // 
-            this.tENSANPHAMDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.tENSANPHAMDataGridViewTextBoxColumn.DataPropertyName = "TENSANPHAM";
-            this.tENSANPHAMDataGridViewTextBoxColumn.HeaderText = "Tên hàng hoá";
-            this.tENSANPHAMDataGridViewTextBoxColumn.Name = "tENSANPHAMDataGridViewTextBoxColumn";
-            this.tENSANPHAMDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // sOLUONGDataGridViewTextBoxColumn
-            // 
-            this.sOLUONGDataGridViewTextBoxColumn.DataPropertyName = "SOLUONG";
-            this.sOLUONGDataGridViewTextBoxColumn.HeaderText = "Số lượng";
-            this.sOLUONGDataGridViewTextBoxColumn.Name = "sOLUONGDataGridViewTextBoxColumn";
-            this.sOLUONGDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // gIANHAPVAODataGridViewTextBoxColumn
-            // 
-            this.gIANHAPVAODataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.gIANHAPVAODataGridViewTextBoxColumn.DataPropertyName = "GIANHAPVAO";
-            this.gIANHAPVAODataGridViewTextBoxColumn.HeaderText = "Giá nhập";
-            this.gIANHAPVAODataGridViewTextBoxColumn.Name = "gIANHAPVAODataGridViewTextBoxColumn";
-            this.gIANHAPVAODataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // gIABANRADataGridViewTextBoxColumn
-            // 
-            this.gIABANRADataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.gIABANRADataGridViewTextBoxColumn.DataPropertyName = "GIABANRA";
-            this.gIABANRADataGridViewTextBoxColumn.HeaderText = "Giá bán/ 1 cái";
-            this.gIABANRADataGridViewTextBoxColumn.Name = "gIABANRADataGridViewTextBoxColumn";
-            this.gIABANRADataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // nGAYNHAPDataGridViewTextBoxColumn
-            // 
-            this.nGAYNHAPDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.nGAYNHAPDataGridViewTextBoxColumn.DataPropertyName = "NGAYNHAP";
-            this.nGAYNHAPDataGridViewTextBoxColumn.HeaderText = "Ngày nhập";
-            this.nGAYNHAPDataGridViewTextBoxColumn.Name = "nGAYNHAPDataGridViewTextBoxColumn";
-            this.nGAYNHAPDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // btnSave
             // 
@@ -387,67 +388,143 @@
             this.btnInsert.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnInsert.Click += new System.EventHandler(this.btnInsert_Click);
             // 
-            // textBox1
+            // txtMaSP
             // 
-            this.textBox1.Location = new System.Drawing.Point(3, 3);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(160, 20);
-            this.textBox1.TabIndex = 34;
+            this.txtMaSP.Location = new System.Drawing.Point(3, 3);
+            this.txtMaSP.Name = "txtMaSP";
+            this.txtMaSP.Size = new System.Drawing.Size(160, 20);
+            this.txtMaSP.TabIndex = 34;
             // 
-            // textBox2
+            // txtGiaBan
             // 
-            this.textBox2.Location = new System.Drawing.Point(601, 3);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(162, 20);
-            this.textBox2.TabIndex = 35;
+            this.txtGiaBan.Location = new System.Drawing.Point(601, 3);
+            this.txtGiaBan.Name = "txtGiaBan";
+            this.txtGiaBan.Size = new System.Drawing.Size(162, 20);
+            this.txtGiaBan.TabIndex = 35;
             // 
-            // textBox3
+            // txtGiaNhap
             // 
-            this.textBox3.Location = new System.Drawing.Point(435, 3);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(160, 20);
-            this.textBox3.TabIndex = 36;
+            this.txtGiaNhap.Location = new System.Drawing.Point(435, 3);
+            this.txtGiaNhap.Name = "txtGiaNhap";
+            this.txtGiaNhap.Size = new System.Drawing.Size(160, 20);
+            this.txtGiaNhap.TabIndex = 36;
             // 
-            // textBox4
+            // txtSL
             // 
-            this.textBox4.Location = new System.Drawing.Point(336, 3);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(93, 20);
-            this.textBox4.TabIndex = 37;
+            this.txtSL.Location = new System.Drawing.Point(336, 3);
+            this.txtSL.Name = "txtSL";
+            this.txtSL.Size = new System.Drawing.Size(93, 20);
+            this.txtSL.TabIndex = 37;
             // 
-            // textBox5
+            // txtTenSP
             // 
-            this.textBox5.Location = new System.Drawing.Point(169, 3);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(161, 20);
-            this.textBox5.TabIndex = 38;
+            this.txtTenSP.Location = new System.Drawing.Point(169, 3);
+            this.txtTenSP.Name = "txtTenSP";
+            this.txtTenSP.Size = new System.Drawing.Size(161, 20);
+            this.txtTenSP.TabIndex = 38;
             // 
-            // dateTimePicker1
+            // DPngNhap
             // 
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(769, 3);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(129, 20);
-            this.dateTimePicker1.TabIndex = 39;
+            this.DPngNhap.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.DPngNhap.Location = new System.Drawing.Point(769, 3);
+            this.DPngNhap.Name = "DPngNhap";
+            this.DPngNhap.Size = new System.Drawing.Size(129, 20);
+            this.DPngNhap.TabIndex = 39;
             // 
             // txtPanel
             // 
-            this.txtPanel.Controls.Add(this.textBox2);
-            this.txtPanel.Controls.Add(this.textBox5);
-            this.txtPanel.Controls.Add(this.textBox4);
-            this.txtPanel.Controls.Add(this.textBox1);
-            this.txtPanel.Controls.Add(this.textBox3);
-            this.txtPanel.Controls.Add(this.dateTimePicker1);
+            this.txtPanel.Controls.Add(this.txtGiaBan);
+            this.txtPanel.Controls.Add(this.txtTenSP);
+            this.txtPanel.Controls.Add(this.txtSL);
+            this.txtPanel.Controls.Add(this.txtMaSP);
+            this.txtPanel.Controls.Add(this.txtGiaNhap);
+            this.txtPanel.Controls.Add(this.DPngNhap);
             this.txtPanel.Location = new System.Drawing.Point(55, 380);
             this.txtPanel.Name = "txtPanel";
             this.txtPanel.Size = new System.Drawing.Size(933, 38);
             this.txtPanel.TabIndex = 40;
+            // 
+            // hANGHOATableAdapter
+            // 
+            this.hANGHOATableAdapter.ClearBeforeFill = true;
+            // 
+            // btnCancel
+            // 
+            this.btnCancel.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
+            this.btnCancel.BackColor = System.Drawing.Color.DarkRed;
+            this.btnCancel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnCancel.BorderRadius = 0;
+            this.btnCancel.ButtonText = "Hủy bỏ";
+            this.btnCancel.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCancel.DisabledColor = System.Drawing.Color.Gray;
+            this.btnCancel.Iconcolor = System.Drawing.Color.Transparent;
+            this.btnCancel.Iconimage = null;
+            this.btnCancel.Iconimage_right = null;
+            this.btnCancel.Iconimage_right_Selected = null;
+            this.btnCancel.Iconimage_Selected = null;
+            this.btnCancel.IconMarginLeft = 0;
+            this.btnCancel.IconMarginRight = 0;
+            this.btnCancel.IconRightVisible = true;
+            this.btnCancel.IconRightZoom = 0D;
+            this.btnCancel.IconVisible = true;
+            this.btnCancel.IconZoom = 90D;
+            this.btnCancel.IsTab = false;
+            this.btnCancel.Location = new System.Drawing.Point(636, 419);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Normalcolor = System.Drawing.Color.DarkRed;
+            this.btnCancel.OnHovercolor = System.Drawing.Color.Maroon;
+            this.btnCancel.OnHoverTextColor = System.Drawing.Color.White;
+            this.btnCancel.selected = false;
+            this.btnCancel.Size = new System.Drawing.Size(155, 48);
+            this.btnCancel.TabIndex = 41;
+            this.btnCancel.Text = "Hủy bỏ";
+            this.btnCancel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnCancel.Textcolor = System.Drawing.Color.White;
+            this.btnCancel.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
+            // 
+            // btnUpdate
+            // 
+            this.btnUpdate.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
+            this.btnUpdate.BackColor = System.Drawing.Color.Goldenrod;
+            this.btnUpdate.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnUpdate.BorderRadius = 0;
+            this.btnUpdate.ButtonText = "Cập nhật";
+            this.btnUpdate.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnUpdate.DisabledColor = System.Drawing.Color.Gray;
+            this.btnUpdate.Iconcolor = System.Drawing.Color.Transparent;
+            this.btnUpdate.Iconimage = null;
+            this.btnUpdate.Iconimage_right = null;
+            this.btnUpdate.Iconimage_right_Selected = null;
+            this.btnUpdate.Iconimage_Selected = null;
+            this.btnUpdate.IconMarginLeft = 0;
+            this.btnUpdate.IconMarginRight = 0;
+            this.btnUpdate.IconRightVisible = true;
+            this.btnUpdate.IconRightZoom = 0D;
+            this.btnUpdate.IconVisible = true;
+            this.btnUpdate.IconZoom = 90D;
+            this.btnUpdate.IsTab = false;
+            this.btnUpdate.Location = new System.Drawing.Point(836, 419);
+            this.btnUpdate.Name = "btnUpdate";
+            this.btnUpdate.Normalcolor = System.Drawing.Color.Goldenrod;
+            this.btnUpdate.OnHovercolor = System.Drawing.Color.Goldenrod;
+            this.btnUpdate.OnHoverTextColor = System.Drawing.Color.White;
+            this.btnUpdate.selected = false;
+            this.btnUpdate.Size = new System.Drawing.Size(155, 48);
+            this.btnUpdate.TabIndex = 42;
+            this.btnUpdate.Text = "Cập nhật";
+            this.btnUpdate.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnUpdate.Textcolor = System.Drawing.Color.White;
+            this.btnUpdate.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // FormHangHoa
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(195)))), ((int)(((byte)(203)))), ((int)(((byte)(214)))));
+            this.Controls.Add(this.btnUpdate);
+            this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.txtPanel);
             this.Controls.Add(this.btnInsert);
             this.Controls.Add(this.btnSave);
@@ -462,7 +539,7 @@
             this.Load += new System.EventHandler(this.FomHangHoa_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataHangHoa)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.hANGHOABindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.qLBHSieuThiDataSet_HANGHOA)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sieuThiDataSet_HangHoa)).EndInit();
             this.txtPanel.ResumeLayout(false);
             this.txtPanel.PerformLayout();
             this.ResumeLayout(false);
@@ -478,26 +555,27 @@
         private Bunifu.Framework.UI.BunifuDropdown ddSearch;
         private System.Windows.Forms.Label label1;
         private Bunifu.Framework.UI.BunifuElipse bunifuElipse2;
-        private Bunifu.Framework.UI.BunifuElipse bunifuElipse3;
-        private Bunifu.Framework.UI.BunifuElipse bunifuElipse4;
-        private System.Windows.Forms.BindingSource hANGHOABindingSource;
-        private QLBHSieuThiDataSet_HANGHOA qLBHSieuThiDataSet_HANGHOA;
-        private QLBHSieuThiDataSet_HANGHOATableAdapters.HANGHOATableAdapter hANGHOATableAdapter;
         private Bunifu.Framework.UI.BunifuFlatButton bunifuFlatButton1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn mASANPHAMDataGridViewTextBoxColumn1;
+        private Bunifu.Framework.UI.BunifuFlatButton btnSave;
+        private Bunifu.Framework.UI.BunifuFlatButton btnInsert;
+        private System.Windows.Forms.TextBox txtMaSP;
+        private System.Windows.Forms.TextBox txtGiaBan;
+        private System.Windows.Forms.TextBox txtGiaNhap;
+        private System.Windows.Forms.TextBox txtSL;
+        private System.Windows.Forms.TextBox txtTenSP;
+        private System.Windows.Forms.DateTimePicker DPngNhap;
+        private System.Windows.Forms.Panel txtPanel;
+        private System.Windows.Forms.BindingSource hANGHOABindingSource;
+        private SieuThiDataSet_HangHoa sieuThiDataSet_HangHoa;
+        private SieuThiDataSet_HangHoaTableAdapters.HANGHOATableAdapter hANGHOATableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn mASANPHAMDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn tENSANPHAMDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn sOLUONGDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn gIANHAPVAODataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn gIABANRADataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn nGAYNHAPDataGridViewTextBoxColumn;
-        private Bunifu.Framework.UI.BunifuFlatButton btnSave;
-        private Bunifu.Framework.UI.BunifuFlatButton btnInsert;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.Panel txtPanel;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn isDelDataGridViewCheckBoxColumn;
+        private Bunifu.Framework.UI.BunifuFlatButton btnCancel;
+        private Bunifu.Framework.UI.BunifuFlatButton btnUpdate;
     }
 }

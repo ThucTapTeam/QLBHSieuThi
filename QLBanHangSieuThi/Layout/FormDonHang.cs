@@ -67,15 +67,12 @@ namespace QLBanHangSieuThi.Layout
             }
             con.Close();
             //Add items XacNhan
-            txtXacNhan.Items.Add("1");
-            txtXacNhan.Items.Add("0");
-            txtXacNhan.SelectedIndex = 0;
             ddSearch.selectedIndex = 0;
 
             btnSave.Enabled = false;
             txtPanel.Visible = false;
             label10.Visible = false;
-            txtMaDon.Items.Add(SugID);
+            btnCancel.Visible = false;
         }
 
         private void DisplayData()
@@ -114,6 +111,7 @@ namespace QLBanHangSieuThi.Layout
                 num++;
                 SugID = str + num;
                 label10.Text = "Gợi ý mã tiếp theo: " +SugID;
+                txtMaDon.Text = SugID;
             }
             con.Close();
         }
@@ -130,6 +128,8 @@ namespace QLBanHangSieuThi.Layout
                 txtMaDon.Items.Add((string)row["MADONHANG"]);
             }
             con.Close();
+            SuggestID();
+            txtMaDon.Items.Add(SugID);
         }
         private void btnSearch_Click(object sender, EventArgs e)
         {
@@ -153,10 +153,6 @@ namespace QLBanHangSieuThi.Layout
             else if (inp == "Mã khuyến mại")
             {
                 inp = "MAKHUYENMAI";
-            }
-            else if (inp == "Xác nhận")
-            {
-                inp = "XACNHAN";
             }
             else if (inp == "Ngày đặt")
             {
@@ -183,8 +179,9 @@ namespace QLBanHangSieuThi.Layout
         {
             txtPanel.Visible = true;
             btnSave.Enabled = true;
-            btnInsert.Enabled = false;
             label10.Visible = true;
+            btnInsert.Visible = false;
+            btnCancel.Visible = true;
         }
         //Kiểm tra các thông tin nhập vào có tồn tại trong DB không
         private bool isExist(string inp1, string inp2, string inp3)
@@ -240,29 +237,41 @@ namespace QLBanHangSieuThi.Layout
                     if (dta.Read())
                     {
                         masanpham = dta["MASANPHAM"].ToString();
+                        string madon = txtMaDon.Text.ToUpper();
                         con.Close();
                         con.Open();
-                        cmdDH = new SqlCommand("INSERT INTO dbo.DONHANG VALUES('"+txtMaDon.Text+"','" + masanpham + "','"+cmbUserName.Text+ "',N'" + txtTenDonHang.Text + "','" 
-                            + cmbMaKhuyenMai.Text + "','" + txtXacNhan.Text + "','" +dateDat.Text + "','" + dateGiao.Text+"')", con);
-                        cmdDH.ExecuteNonQuery();
-                        con.Close();
-                        DisplayData();
-                    }
-                    txtMaDon.ResetText();
-                    cmbMaSp.ResetText();
-                    cmbUserName.ResetText();
-                    txtTenDonHang.ResetText();
-                    txtXacNhan.ResetText();
-                    cmbMaKhuyenMai.ResetText();
-                    //gợi ý mã mới và thêm
-                    SuggestID();
-                    txtMaDon.Items.Add(SugID);
-                    if (MessageBox.Show("Thêm nữa?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
-                    {
-                        btnInsert.Enabled = true;
-                        btnSave.Enabled = false;
-                        txtPanel.Visible = false;
-                        label10.Visible = false;
+                        cmdDH = new SqlCommand("EXECUTE dbo.SID_DONHANG '" + madon + "','" + masanpham + "','',N'','','','','Select'", con);
+                        SqlDataReader dta2 = cmdDH.ExecuteReader();
+                        if (dta2.Read())
+                        {
+                            MessageBox.Show("Đã tồn tại mã đơn và mặt hàng này");
+                        }
+                        else
+                        {
+                            con.Close();
+                            con.Open();
+                            cmdDH = new SqlCommand("EXECUTE dbo.SID_DONHANG '" + txtMaDon.Text + "','" + masanpham + "','"+cmbUserName.Text+"',N'"+txtTenDonHang.Text+"','"+cmbMaKhuyenMai.Text+"','"+dateDat.Text+"','"+dateGiao.Text+"','Insert'", con);
+                            cmdDH.ExecuteNonQuery();
+                            DisplayData();
+
+                            txtMaDon.ResetText();
+                            cmbMaSp.ResetText();
+                            cmbUserName.ResetText();
+                            txtTenDonHang.ResetText();
+                            cmbMaKhuyenMai.ResetText();
+                            //gợi ý mã mới và thêm
+                            SuggestID();
+                            txtMaDon.Items.Add(SugID);
+                            if (MessageBox.Show("Thêm thành công. Bạn có muốn thêm nữa?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
+                            {
+                                btnInsert.Visible = true;
+                                btnSave.Enabled = false;
+                                txtPanel.Visible = false;
+                                label10.Visible = false;
+                                btnCancel.Visible = false;
+                            }
+                        }
+                        con.Close();   
                     }
                 }
             }
@@ -270,24 +279,50 @@ namespace QLBanHangSieuThi.Layout
         //click icon thùng rác
         private void dataDonHang_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (dataDonHang.CurrentCell.ColumnIndex.Equals(8) && e.RowIndex != -1)
+            if (dataDonHang.CurrentCell.ColumnIndex.Equals(7) && e.RowIndex != -1)
             {
                 if (dataDonHang.CurrentCell != null && dataDonHang.CurrentCell.Value != null)
                 {
-                    string del = dataDonHang.Rows[e.RowIndex].Cells[0].Value.ToString();
-                    if ((MessageBox.Show("Xác nhận XOÁ ", "Xác nhận XOÁ", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes))
+                    string madonhang = dataDonHang.Rows[e.RowIndex].Cells[0].Value.ToString();
+                    string masanpham = dataDonHang.Rows[e.RowIndex].Cells[1].Value.ToString();
+                    con.Open();
+                    cmdDH = new SqlCommand("SELECT MASANPHAM FROM HANGHOA WHERE TENSANPHAM ='" + masanpham + "'", con);
+                    SqlDataReader dta = cmdDH.ExecuteReader();
+                    if (dta.Read())
                     {
-                        con.Open();
-                        cmdDH = new SqlCommand("DELETE FROM dbo.DONHANG WHERE [MADONHANG]='" + del + "'", con);
-                        cmdDH.ExecuteNonQuery();
+                        masanpham = dta["MASANPHAM"].ToString();
                         con.Close();
-                        LoadMaDH();
-                        SuggestID();
+                        if ((MessageBox.Show("Xác nhận XOÁ ", "Xác nhận XOÁ", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes))
+                        {
+                            con.Open();
+                            cmdDH = new SqlCommand("EXECUTE dbo.SID_DONHANG '" + madonhang + "','" + masanpham + "','',N'','','','','Delete'", con);
+                            cmdDH.ExecuteNonQuery();
+                            con.Close();
+                            LoadMaDH();
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("Có lỗi xảy ra");
                     }
                 }
             }
             con.Close();
             DisplayData();
+        }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            txtMaDon.ResetText();
+            cmbMaSp.ResetText();
+            cmbUserName.ResetText();
+            txtTenDonHang.ResetText();
+            cmbMaKhuyenMai.ResetText();
+            btnInsert.Visible = true;
+            btnSave.Enabled = false;
+            txtPanel.Visible = false;
+            label10.Visible = false;
+            btnCancel.Visible = false;
         }
     }
 }

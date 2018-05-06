@@ -31,9 +31,9 @@ namespace QLBanHangSieuThi.Layout
             tienbanhang.Text=cn.tongquan("select sum(giabanra) from hanghoa INNER JOIN DONHANG ON HANGHOA.MASANPHAM=DONHANG.MASANPHAM where DONHANG.NGAYDAT= cast(getdate() as date)", 0);
             hangbanra.Text = cn.tongquan("select count(masanpham) from donhang where NGAYDAT= cast(getdate() as date)", 0);
             sodonhang.Text = cn.tongquan("select count(madonhang) from donhang where NGAYDAT= cast(getdate() as date)", 0);
-            taicho.Text = cn.tongquan("select COUNT(XACNHAN) FROM DONHANG WHERE XACNHAN=1",0);
-            giaohang.Text = cn.tongquan("select COUNT(XACNHAN) FROM DONHANG WHERE XACNHAN=2", 0);
-            hangkhachtra.Text = cn.tongquan("select COUNT(XACNHAN) FROM DONHANG WHERE XACNHAN=3", 0);
+            //taicho.Text = cn.tongquan("select COUNT(XACNHAN) FROM DONHANG WHERE XACNHAN=1",0);
+            //giaohang.Text = cn.tongquan("select COUNT(XACNHAN) FROM DONHANG WHERE XACNHAN=2", 0);
+            //hangkhachtra.Text = cn.tongquan("select COUNT(XACNHAN) FROM DONHANG WHERE XACNHAN=3", 0);
 
             hangtrongkho.Text = cn.tongquan("select sum(SOLUONG) FROM HANGHOA ", 0);
             hangtonkholau.Text = cn.tongquan("select count(masanpham) from hanghoa where month(ngaynhap) <= month(cast(GETDATE() as date)) - 1 and year(ngaynhap)=year(cast(GETDATE() as date))",0);//san pham co ngay nhap qua 1 thang so voi hien tai
@@ -41,7 +41,7 @@ namespace QLBanHangSieuThi.Layout
             sohangsaphet.Text = cn.tongquan("select count(masanpham) from hanghoa where soluong<5", 0);
 
 
-            hangbiloi.Text = cn.tongquan("select count(*) from hanghoa where kiemtraloi=1", 0);
+            //hangbiloi.Text = cn.tongquan("select count(*) from hanghoa where kiemtraloi=1", 0);
             HoatDongHN();
         }
         public void HoatDongHN()
@@ -72,7 +72,7 @@ namespace QLBanHangSieuThi.Layout
                     sodonhang1.Text= cn.tongquan("select count(madonhang) from donhang where year(donhang.NGAYDAT)=year(cast(getdate() as date)) and month(donhang.NGAYDAT)=month(cast(getdate() as date))", 0);
                     int temp1 = Int32.Parse(tienbanhang1.Text) / Int32.Parse(sodonhang1.Text);
                     tientrungbinh.Text = temp1.ToString();
-                    hangkhachtra1.Text= cn.tongquan("select COUNT(XACNHAN) FROM DONHANG WHERE XACNHAN=3 and year(donhang.NGAYDAT)=year(cast(getdate() as date)) and month(donhang.NGAYDAT)=month(cast(getdate() as date))", 0);
+                    //hangkhachtra1.Text= cn.tongquan("select COUNT(XACNHAN) FROM DONHANG WHERE XACNHAN=3 and year(donhang.NGAYDAT)=year(cast(getdate() as date)) and month(donhang.NGAYDAT)=month(cast(getdate() as date))", 0);
                 }
                 
             }
@@ -85,7 +85,7 @@ namespace QLBanHangSieuThi.Layout
                     tongtienlai1.Text = cn.tongquan("select sum(giabanra-gianhapvao) from hanghoa inner join donhang on hanghoa.masanpham=donhang.masanpham where year(donhang.NGAYDAT)=year(cast(getdate() as date))", 0);
                     int temp2 = Int32.Parse(tienbanhang1.Text) / Int32.Parse(sodonhang1.Text);
                     tientrungbinh.Text = temp2.ToString();
-                    hangkhachtra1.Text= cn.tongquan("select COUNT(XACNHAN) FROM DONHANG WHERE XACNHAN=3 and  year(donhang.NGAYDAT)=year(cast(getdate() as date))", 0);
+                    //hangkhachtra1.Text= cn.tongquan("select COUNT(XACNHAN) FROM DONHANG WHERE XACNHAN=3 and  year(donhang.NGAYDAT)=year(cast(getdate() as date))", 0);
                 }
             }
         }

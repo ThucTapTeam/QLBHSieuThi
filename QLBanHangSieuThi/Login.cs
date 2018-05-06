@@ -39,9 +39,8 @@ namespace QLBanHangSieuThi
                 this.Hide();
                 MainForm mf = new MainForm();
                 mf.Show();
-                
             }
-            
+            cn.getUserInfo(user);
         }
     }
 }

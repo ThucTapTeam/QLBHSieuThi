@@ -124,21 +124,22 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>.xsd</DependentUpon>
     </Compile>
-    <Compile Include="QLBHSieuThiDataSet_HANGHOA.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>QLBHSieuThiDataSet_HANGHOA.xsd</DependentUpon>
-    </Compile>
     <Compile Include="QLBHSieuThiDataSet_KHACHHANG.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>QLBHSieuThiDataSet_KHACHHANG.xsd</DependentUpon>
     </Compile>
-    <Compile Include="SieuThiDataSet_DONHANG.Designer.cs">
+    <Compile Include="SieuThiDataSet_DonHang.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>SieuThiDataSet_DONHANG.xsd</DependentUpon>
+      <DependentUpon>SieuThiDataSet_DonHang.xsd</DependentUpon>
     </Compile>
+    <Compile Include="SieuThiDataSet_HangHoa.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SieuThiDataSet_HangHoa.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="UserInfo.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
@@ -195,17 +196,6 @@
     <None Include=".xss">
       <DependentUpon>.xsd</DependentUpon>
     </None>
-    <None Include="QLBHSieuThiDataSet_HANGHOA.xsc">
-      <DependentUpon>QLBHSieuThiDataSet_HANGHOA.xsd</DependentUpon>
-    </None>
-    <None Include="QLBHSieuThiDataSet_HANGHOA.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>QLBHSieuThiDataSet_HANGHOA.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="QLBHSieuThiDataSet_HANGHOA.xss">
-      <DependentUpon>QLBHSieuThiDataSet_HANGHOA.xsd</DependentUpon>
-    </None>
     <None Include="QLBHSieuThiDataSet_KHACHHANG.xsc">
       <DependentUpon>QLBHSieuThiDataSet_KHACHHANG.xsd</DependentUpon>
     </None>
@@ -217,16 +207,27 @@
     <None Include="QLBHSieuThiDataSet_KHACHHANG.xss">
       <DependentUpon>QLBHSieuThiDataSet_KHACHHANG.xsd</DependentUpon>
     </None>
-    <None Include="SieuThiDataSet_DONHANG.xsc">
-      <DependentUpon>SieuThiDataSet_DONHANG.xsd</DependentUpon>
+    <None Include="SieuThiDataSet_DonHang.xsc">
+      <DependentUpon>SieuThiDataSet_DonHang.xsd</DependentUpon>
     </None>
-    <None Include="SieuThiDataSet_DONHANG.xsd">
+    <None Include="SieuThiDataSet_DonHang.xsd">
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>SieuThiDataSet_DONHANG.Designer.cs</LastGenOutput>
+      <LastGenOutput>SieuThiDataSet_DonHang.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
-    <None Include="SieuThiDataSet_DONHANG.xss">
-      <DependentUpon>SieuThiDataSet_DONHANG.xsd</DependentUpon>
+    <None Include="SieuThiDataSet_DonHang.xss">
+      <DependentUpon>SieuThiDataSet_DonHang.xsd</DependentUpon>
+    </None>
+    <None Include="SieuThiDataSet_HangHoa.xsc">
+      <DependentUpon>SieuThiDataSet_HangHoa.xsd</DependentUpon>
+    </None>
+    <None Include="SieuThiDataSet_HangHoa.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>SieuThiDataSet_HangHoa.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="SieuThiDataSet_HangHoa.xss">
+      <DependentUpon>SieuThiDataSet_HangHoa.xsd</DependentUpon>
     </None>
   </ItemGroup>
   <ItemGroup>

@@ -20,9 +20,9 @@ namespace QLBanHangSieuThi {
     [global::System.ComponentModel.DesignerCategoryAttribute("code")]
     [global::System.ComponentModel.ToolboxItem(true)]
     [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedDataSetSchema")]
-    [global::System.Xml.Serialization.XmlRootAttribute("SieuThiDataSet_DONHANG")]
+    [global::System.Xml.Serialization.XmlRootAttribute("SieuThiDataSet_DonHang")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.DataSet")]
-    public partial class SieuThiDataSet_DONHANG : global::System.Data.DataSet {
+    public partial class SieuThiDataSet_DonHang : global::System.Data.DataSet {
         
         private VIEW_DONHANGDataTable tableVIEW_DONHANG;
         
@@ -30,7 +30,7 @@ namespace QLBanHangSieuThi {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        public SieuThiDataSet_DONHANG() {
+        public SieuThiDataSet_DonHang() {
             this.BeginInit();
             this.InitClass();
             global::System.ComponentModel.CollectionChangeEventHandler schemaChangedHandler = new global::System.ComponentModel.CollectionChangeEventHandler(this.SchemaChanged);
@@ -41,7 +41,7 @@ namespace QLBanHangSieuThi {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        protected SieuThiDataSet_DONHANG(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+        protected SieuThiDataSet_DonHang(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                 base(info, context, false) {
             if ((this.IsBinarySerialized(info, context) == true)) {
                 this.InitVars(false);
@@ -127,7 +127,7 @@ namespace QLBanHangSieuThi {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         public override global::System.Data.DataSet Clone() {
-            SieuThiDataSet_DONHANG cln = ((SieuThiDataSet_DONHANG)(base.Clone()));
+            SieuThiDataSet_DonHang cln = ((SieuThiDataSet_DonHang)(base.Clone()));
             cln.InitVars();
             cln.SchemaSerializationMode = this.SchemaSerializationMode;
             return cln;
@@ -199,9 +199,9 @@ namespace QLBanHangSieuThi {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private void InitClass() {
-            this.DataSetName = "SieuThiDataSet_DONHANG";
+            this.DataSetName = "SieuThiDataSet_DonHang";
             this.Prefix = "";
-            this.Namespace = "http://tempuri.org/SieuThiDataSet_DONHANG.xsd";
+            this.Namespace = "http://tempuri.org/SieuThiDataSet_DonHang.xsd";
             this.EnforceConstraints = true;
             this.SchemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
             this.tableVIEW_DONHANG = new VIEW_DONHANGDataTable();
@@ -225,7 +225,7 @@ namespace QLBanHangSieuThi {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedDataSetSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
-            SieuThiDataSet_DONHANG ds = new SieuThiDataSet_DONHANG();
+            SieuThiDataSet_DonHang ds = new SieuThiDataSet_DonHang();
             global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
             global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
             global::System.Xml.Schema.XmlSchemaAny any = new global::System.Xml.Schema.XmlSchemaAny();
@@ -288,8 +288,6 @@ namespace QLBanHangSieuThi {
             private global::System.Data.DataColumn columnTENDONHANG;
             
             private global::System.Data.DataColumn columnMAKHUYENMAI;
-            
-            private global::System.Data.DataColumn columnXACNHAN;
             
             private global::System.Data.DataColumn columnNGAYDAT;
             
@@ -370,14 +368,6 @@ namespace QLBanHangSieuThi {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn XACNHANColumn {
-                get {
-                    return this.columnXACNHAN;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public global::System.Data.DataColumn NGAYDATColumn {
                 get {
                     return this.columnNGAYDAT;
@@ -429,7 +419,7 @@ namespace QLBanHangSieuThi {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public VIEW_DONHANGRow AddVIEW_DONHANGRow(string MADONHANG, string TENSANPHAM, string USERNAME, string TENDONHANG, string MAKHUYENMAI, int XACNHAN, System.DateTime NGAYDAT, System.DateTime NGAYGIAOHANG) {
+            public VIEW_DONHANGRow AddVIEW_DONHANGRow(string MADONHANG, string TENSANPHAM, string USERNAME, string TENDONHANG, string MAKHUYENMAI, System.DateTime NGAYDAT, System.DateTime NGAYGIAOHANG) {
                 VIEW_DONHANGRow rowVIEW_DONHANGRow = ((VIEW_DONHANGRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         MADONHANG,
@@ -437,7 +427,6 @@ namespace QLBanHangSieuThi {
                         USERNAME,
                         TENDONHANG,
                         MAKHUYENMAI,
-                        XACNHAN,
                         NGAYDAT,
                         NGAYGIAOHANG};
                 rowVIEW_DONHANGRow.ItemArray = columnValuesArray;
@@ -467,7 +456,6 @@ namespace QLBanHangSieuThi {
                 this.columnUSERNAME = base.Columns["USERNAME"];
                 this.columnTENDONHANG = base.Columns["TENDONHANG"];
                 this.columnMAKHUYENMAI = base.Columns["MAKHUYENMAI"];
-                this.columnXACNHAN = base.Columns["XACNHAN"];
                 this.columnNGAYDAT = base.Columns["NGAYDAT"];
                 this.columnNGAYGIAOHANG = base.Columns["NGAYGIAOHANG"];
             }
@@ -485,8 +473,6 @@ namespace QLBanHangSieuThi {
                 base.Columns.Add(this.columnTENDONHANG);
                 this.columnMAKHUYENMAI = new global::System.Data.DataColumn("MAKHUYENMAI", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnMAKHUYENMAI);
-                this.columnXACNHAN = new global::System.Data.DataColumn("XACNHAN", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnXACNHAN);
                 this.columnNGAYDAT = new global::System.Data.DataColumn("NGAYDAT", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnNGAYDAT);
                 this.columnNGAYGIAOHANG = new global::System.Data.DataColumn("NGAYGIAOHANG", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
@@ -564,7 +550,7 @@ namespace QLBanHangSieuThi {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                SieuThiDataSet_DONHANG ds = new SieuThiDataSet_DONHANG();
+                SieuThiDataSet_DonHang ds = new SieuThiDataSet_DonHang();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -714,22 +700,6 @@ namespace QLBanHangSieuThi {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public int XACNHAN {
-                get {
-                    try {
-                        return ((int)(this[this.tableVIEW_DONHANG.XACNHANColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'XACNHAN\' in table \'VIEW_DONHANG\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableVIEW_DONHANG.XACNHANColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public System.DateTime NGAYDAT {
                 get {
                     try {
@@ -810,18 +780,6 @@ namespace QLBanHangSieuThi {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public bool IsXACNHANNull() {
-                return this.IsNull(this.tableVIEW_DONHANG.XACNHANColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void SetXACNHANNull() {
-                this[this.tableVIEW_DONHANG.XACNHANColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public bool IsNGAYDATNull() {
                 return this.IsNull(this.tableVIEW_DONHANG.NGAYDATColumn);
             }
@@ -880,7 +838,7 @@ namespace QLBanHangSieuThi {
         }
     }
 }
-namespace QLBanHangSieuThi.SieuThiDataSet_DONHANGTableAdapters {
+namespace QLBanHangSieuThi.SieuThiDataSet_DonHangTableAdapters {
     
     
     /// <summary>
@@ -1009,7 +967,6 @@ namespace QLBanHangSieuThi.SieuThiDataSet_DONHANGTableAdapters {
             tableMapping.ColumnMappings.Add("USERNAME", "USERNAME");
             tableMapping.ColumnMappings.Add("TENDONHANG", "TENDONHANG");
             tableMapping.ColumnMappings.Add("MAKHUYENMAI", "MAKHUYENMAI");
-            tableMapping.ColumnMappings.Add("XACNHAN", "XACNHAN");
             tableMapping.ColumnMappings.Add("NGAYDAT", "NGAYDAT");
             tableMapping.ColumnMappings.Add("NGAYGIAOHANG", "NGAYGIAOHANG");
             this._adapter.TableMappings.Add(tableMapping);
@@ -1028,8 +985,8 @@ namespace QLBanHangSieuThi.SieuThiDataSet_DONHANGTableAdapters {
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT MADONHANG, TENSANPHAM, USERNAME, TENDONHANG, MAKHUYENMAI, XACNHAN, NGAYDAT" +
-                ", NGAYGIAOHANG FROM dbo.VIEW_DONHANG";
+            this._commandCollection[0].CommandText = "SELECT MADONHANG, TENSANPHAM, USERNAME, TENDONHANG, MAKHUYENMAI, NGAYDAT, NGAYGIA" +
+                "OHANG FROM dbo.VIEW_DONHANG";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -1037,7 +994,7 @@ namespace QLBanHangSieuThi.SieuThiDataSet_DONHANGTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(SieuThiDataSet_DONHANG.VIEW_DONHANGDataTable dataTable) {
+        public virtual int Fill(SieuThiDataSet_DonHang.VIEW_DONHANGDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -1050,9 +1007,9 @@ namespace QLBanHangSieuThi.SieuThiDataSet_DONHANGTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual SieuThiDataSet_DONHANG.VIEW_DONHANGDataTable GetData() {
+        public virtual SieuThiDataSet_DonHang.VIEW_DONHANGDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            SieuThiDataSet_DONHANG.VIEW_DONHANGDataTable dataTable = new SieuThiDataSet_DONHANG.VIEW_DONHANGDataTable();
+            SieuThiDataSet_DonHang.VIEW_DONHANGDataTable dataTable = new SieuThiDataSet_DonHang.VIEW_DONHANGDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -1126,7 +1083,7 @@ namespace QLBanHangSieuThi.SieuThiDataSet_DONHANGTableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        private int UpdateUpdatedRows(SieuThiDataSet_DONHANG dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateUpdatedRows(SieuThiDataSet_DonHang dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
             return result;
         }
@@ -1136,7 +1093,7 @@ namespace QLBanHangSieuThi.SieuThiDataSet_DONHANGTableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        private int UpdateInsertedRows(SieuThiDataSet_DONHANG dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateInsertedRows(SieuThiDataSet_DonHang dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
             return result;
         }
@@ -1146,7 +1103,7 @@ namespace QLBanHangSieuThi.SieuThiDataSet_DONHANGTableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        private int UpdateDeletedRows(SieuThiDataSet_DONHANG dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
+        private int UpdateDeletedRows(SieuThiDataSet_DonHang dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
             int result = 0;
             return result;
         }
@@ -1180,7 +1137,7 @@ namespace QLBanHangSieuThi.SieuThiDataSet_DONHANGTableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        public virtual int UpdateAll(SieuThiDataSet_DONHANG dataSet) {
+        public virtual int UpdateAll(SieuThiDataSet_DonHang dataSet) {
             if ((dataSet == null)) {
                 throw new global::System.ArgumentNullException("dataSet");
             }

@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<xs:schema id="SieuThiDataSet_DONHANG" targetNamespace="http://tempuri.org/SieuThiDataSet_DONHANG.xsd" xmlns:mstns="http://tempuri.org/SieuThiDataSet_DONHANG.xsd" xmlns="http://tempuri.org/SieuThiDataSet_DONHANG.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+<xs:schema id="SieuThiDataSet_DonHang" targetNamespace="http://tempuri.org/SieuThiDataSet_DonHang.xsd" xmlns:mstns="http://tempuri.org/SieuThiDataSet_DonHang.xsd" xmlns="http://tempuri.org/SieuThiDataSet_DonHang.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
   <xs:annotation>
     <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
       <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
@@ -12,7 +12,7 @@
               <DbSource ConnectionRef="SieuThiConnectionString (Settings)" DbObjectName="SieuThi.dbo.VIEW_DONHANG" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>SELECT MADONHANG, TENSANPHAM, USERNAME, TENDONHANG, MAKHUYENMAI, XACNHAN, NGAYDAT, NGAYGIAOHANG FROM dbo.VIEW_DONHANG</CommandText>
+                    <CommandText>SELECT MADONHANG, TENSANPHAM, USERNAME, TENDONHANG, MAKHUYENMAI, NGAYDAT, NGAYGIAOHANG FROM dbo.VIEW_DONHANG</CommandText>
                     <Parameters />
                   </DbCommand>
                 </SelectCommand>
@@ -24,7 +24,6 @@
               <Mapping SourceColumn="USERNAME" DataSetColumn="USERNAME" />
               <Mapping SourceColumn="TENDONHANG" DataSetColumn="TENDONHANG" />
               <Mapping SourceColumn="MAKHUYENMAI" DataSetColumn="MAKHUYENMAI" />
-              <Mapping SourceColumn="XACNHAN" DataSetColumn="XACNHAN" />
               <Mapping SourceColumn="NGAYDAT" DataSetColumn="NGAYDAT" />
               <Mapping SourceColumn="NGAYGIAOHANG" DataSetColumn="NGAYGIAOHANG" />
             </Mappings>
@@ -35,7 +34,7 @@
       </DataSource>
     </xs:appinfo>
   </xs:annotation>
-  <xs:element name="SieuThiDataSet_DONHANG" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="SieuThiDataSet_DONHANG" msprop:Generator_UserDSName="SieuThiDataSet_DONHANG">
+  <xs:element name="SieuThiDataSet_DonHang" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="SieuThiDataSet_DonHang" msprop:Generator_UserDSName="SieuThiDataSet_DonHang">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
         <xs:element name="VIEW_DONHANG" msprop:Generator_TableClassName="VIEW_DONHANGDataTable" msprop:Generator_TableVarName="tableVIEW_DONHANG" msprop:Generator_TablePropName="VIEW_DONHANG" msprop:Generator_RowDeletingName="VIEW_DONHANGRowDeleting" msprop:Generator_RowChangingName="VIEW_DONHANGRowChanging" msprop:Generator_RowEvHandlerName="VIEW_DONHANGRowChangeEventHandler" msprop:Generator_RowDeletedName="VIEW_DONHANGRowDeleted" msprop:Generator_UserTableName="VIEW_DONHANG" msprop:Generator_RowChangedName="VIEW_DONHANGRowChanged" msprop:Generator_RowEvArgName="VIEW_DONHANGRowChangeEvent" msprop:Generator_RowClassName="VIEW_DONHANGRow">
@@ -76,7 +75,6 @@
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="XACNHAN" msprop:Generator_ColumnVarNameInTable="columnXACNHAN" msprop:Generator_ColumnPropNameInRow="XACNHAN" msprop:Generator_ColumnPropNameInTable="XACNHANColumn" msprop:Generator_UserColumnName="XACNHAN" type="xs:int" minOccurs="0" />
               <xs:element name="NGAYDAT" msprop:Generator_ColumnVarNameInTable="columnNGAYDAT" msprop:Generator_ColumnPropNameInRow="NGAYDAT" msprop:Generator_ColumnPropNameInTable="NGAYDATColumn" msprop:Generator_UserColumnName="NGAYDAT" type="xs:dateTime" minOccurs="0" />
               <xs:element name="NGAYGIAOHANG" msprop:Generator_ColumnVarNameInTable="columnNGAYGIAOHANG" msprop:Generator_ColumnPropNameInRow="NGAYGIAOHANG" msprop:Generator_ColumnPropNameInTable="NGAYGIAOHANGColumn" msprop:Generator_UserColumnName="NGAYGIAOHANG" type="xs:dateTime" minOccurs="0" />
             </xs:sequence>
