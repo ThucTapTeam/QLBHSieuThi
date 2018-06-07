@@ -31,11 +31,7 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.panel2 = new System.Windows.Forms.Panel();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.Logout = new System.Windows.Forms.Label();
             this.minimize = new System.Windows.Forms.Panel();
             this.btexit = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -43,7 +39,6 @@
             this.btdoanhthu = new Bunifu.Framework.UI.BunifuFlatButton();
             this.btkhuyenmai = new Bunifu.Framework.UI.BunifuFlatButton();
             this.bunifuFlatButton1 = new Bunifu.Framework.UI.BunifuFlatButton();
-            this.btnhapkho = new Bunifu.Framework.UI.BunifuFlatButton();
             this.btkhachhang = new Bunifu.Framework.UI.BunifuFlatButton();
             this.bthanghoa = new Bunifu.Framework.UI.BunifuFlatButton();
             this.btdonhang = new Bunifu.Framework.UI.BunifuFlatButton();
@@ -52,6 +47,9 @@
             this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.line1 = new DevComponents.DotNetBar.Controls.Line();
             this.panelTongquan = new System.Windows.Forms.Panel();
+            this.label5 = new System.Windows.Forms.Label();
+            this.EditAccess = new System.Windows.Forms.Label();
+            this.UserDetails = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -62,10 +60,9 @@
             this.panel2.BackColor = System.Drawing.Color.White;
             this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.panel2.Controls.Add(this.label5);
-            this.panel2.Controls.Add(this.label7);
-            this.panel2.Controls.Add(this.label4);
-            this.panel2.Controls.Add(this.label3);
-            this.panel2.Controls.Add(this.label2);
+            this.panel2.Controls.Add(this.EditAccess);
+            this.panel2.Controls.Add(this.Logout);
+            this.panel2.Controls.Add(this.UserDetails);
             this.panel2.Controls.Add(this.minimize);
             this.panel2.Controls.Add(this.btexit);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
@@ -74,58 +71,17 @@
             this.panel2.Size = new System.Drawing.Size(1046, 50);
             this.panel2.TabIndex = 3;
             // 
-            // label5
+            // Logout
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Ebrima", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(270, 11);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(20, 28);
-            this.label5.TabIndex = 9;
-            this.label5.Text = "/";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.label7.Font = new System.Drawing.Font("Quicksand", 10F);
-            this.label7.Location = new System.Drawing.Point(209, 16);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(55, 21);
-            this.label7.TabIndex = 8;
-            this.label7.Text = "Hotline";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.label4.Font = new System.Drawing.Font("Quicksand", 10F);
-            this.label4.Location = new System.Drawing.Point(296, 16);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(45, 21);
-            this.label4.TabIndex = 5;
-            this.label4.Text = "Login";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Ebrima", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(189, 12);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(20, 28);
-            this.label3.TabIndex = 4;
-            this.label3.Text = "/";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.label2.Font = new System.Drawing.Font("Quicksand", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(140, 16);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(50, 21);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "Hỗ trợ";
+            this.Logout.AutoSize = true;
+            this.Logout.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Logout.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.Logout.Location = new System.Drawing.Point(899, 16);
+            this.Logout.Name = "Logout";
+            this.Logout.Size = new System.Drawing.Size(48, 17);
+            this.Logout.TabIndex = 5;
+            this.Logout.Text = "Đ.xuất";
+            this.Logout.Click += new System.EventHandler(this.Logout_Click);
             // 
             // minimize
             // 
@@ -157,7 +113,6 @@
             this.panel1.Controls.Add(this.btdoanhthu);
             this.panel1.Controls.Add(this.btkhuyenmai);
             this.panel1.Controls.Add(this.bunifuFlatButton1);
-            this.panel1.Controls.Add(this.btnhapkho);
             this.panel1.Controls.Add(this.btkhachhang);
             this.panel1.Controls.Add(this.bthanghoa);
             this.panel1.Controls.Add(this.btdonhang);
@@ -198,7 +153,7 @@
             this.btdoanhthu.IconVisible = true;
             this.btdoanhthu.IconZoom = 50D;
             this.btdoanhthu.IsTab = true;
-            this.btdoanhthu.Location = new System.Drawing.Point(-7, 351);
+            this.btdoanhthu.Location = new System.Drawing.Point(-7, 302);
             this.btdoanhthu.Name = "btdoanhthu";
             this.btdoanhthu.Normalcolor = System.Drawing.Color.Empty;
             this.btdoanhthu.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(190)))), ((int)(((byte)(195)))));
@@ -209,7 +164,7 @@
             this.btdoanhthu.Text = "       Doanh thu";
             this.btdoanhthu.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btdoanhthu.Textcolor = System.Drawing.Color.White;
-            this.btdoanhthu.TextFont = new System.Drawing.Font("Quicksand", 10F);
+            this.btdoanhthu.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.btdoanhthu.Click += new System.EventHandler(this.btdoanhthu_Click);
             // 
             // btkhuyenmai
@@ -234,7 +189,7 @@
             this.btkhuyenmai.IconVisible = true;
             this.btkhuyenmai.IconZoom = 50D;
             this.btkhuyenmai.IsTab = true;
-            this.btkhuyenmai.Location = new System.Drawing.Point(-7, 301);
+            this.btkhuyenmai.Location = new System.Drawing.Point(-7, 252);
             this.btkhuyenmai.Name = "btkhuyenmai";
             this.btkhuyenmai.Normalcolor = System.Drawing.Color.Empty;
             this.btkhuyenmai.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(190)))), ((int)(((byte)(195)))));
@@ -245,7 +200,7 @@
             this.btkhuyenmai.Text = "       Khuyến mãi";
             this.btkhuyenmai.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btkhuyenmai.Textcolor = System.Drawing.Color.White;
-            this.btkhuyenmai.TextFont = new System.Drawing.Font("Quicksand", 10F);
+            this.btkhuyenmai.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.btkhuyenmai.Click += new System.EventHandler(this.btkhuyenmai_Click);
             // 
             // bunifuFlatButton1
@@ -282,44 +237,8 @@
             this.bunifuFlatButton1.Text = "       Tổng quan";
             this.bunifuFlatButton1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.bunifuFlatButton1.Textcolor = System.Drawing.Color.White;
-            this.bunifuFlatButton1.TextFont = new System.Drawing.Font("Quicksand", 10F);
+            this.bunifuFlatButton1.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.bunifuFlatButton1.Click += new System.EventHandler(this.bunifuFlatButton1_Click);
-            // 
-            // btnhapkho
-            // 
-            this.btnhapkho.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(94)))), ((int)(((byte)(87)))));
-            this.btnhapkho.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.btnhapkho.BorderRadius = 0;
-            this.btnhapkho.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.btnhapkho.ButtonText = "       Nhập kho";
-            this.btnhapkho.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnhapkho.DisabledColor = System.Drawing.Color.Gray;
-            this.btnhapkho.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnhapkho.Iconcolor = System.Drawing.Color.Transparent;
-            this.btnhapkho.Iconimage = ((System.Drawing.Image)(resources.GetObject("btnhapkho.Iconimage")));
-            this.btnhapkho.Iconimage_right = null;
-            this.btnhapkho.Iconimage_right_Selected = null;
-            this.btnhapkho.Iconimage_Selected = null;
-            this.btnhapkho.IconMarginLeft = 40;
-            this.btnhapkho.IconMarginRight = 0;
-            this.btnhapkho.IconRightVisible = true;
-            this.btnhapkho.IconRightZoom = 0D;
-            this.btnhapkho.IconVisible = true;
-            this.btnhapkho.IconZoom = 50D;
-            this.btnhapkho.IsTab = true;
-            this.btnhapkho.Location = new System.Drawing.Point(-7, 251);
-            this.btnhapkho.Name = "btnhapkho";
-            this.btnhapkho.Normalcolor = System.Drawing.Color.Empty;
-            this.btnhapkho.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(190)))), ((int)(((byte)(195)))));
-            this.btnhapkho.OnHoverTextColor = System.Drawing.Color.White;
-            this.btnhapkho.selected = false;
-            this.btnhapkho.Size = new System.Drawing.Size(250, 51);
-            this.btnhapkho.TabIndex = 9;
-            this.btnhapkho.Text = "       Nhập kho";
-            this.btnhapkho.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnhapkho.Textcolor = System.Drawing.Color.White;
-            this.btnhapkho.TextFont = new System.Drawing.Font("Quicksand", 10F);
-            this.btnhapkho.Click += new System.EventHandler(this.btnhapkho_Click);
             // 
             // btkhachhang
             // 
@@ -354,7 +273,7 @@
             this.btkhachhang.Text = "       Khách hàng";
             this.btkhachhang.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btkhachhang.Textcolor = System.Drawing.Color.White;
-            this.btkhachhang.TextFont = new System.Drawing.Font("Quicksand", 10F);
+            this.btkhachhang.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.btkhachhang.Click += new System.EventHandler(this.btkhachhang_Click);
             // 
             // bthanghoa
@@ -390,7 +309,7 @@
             this.bthanghoa.Text = "       Hàng hóa";
             this.bthanghoa.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.bthanghoa.Textcolor = System.Drawing.Color.White;
-            this.bthanghoa.TextFont = new System.Drawing.Font("Quicksand", 10F);
+            this.bthanghoa.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.bthanghoa.Click += new System.EventHandler(this.bthanghoa_Click);
             // 
             // btdonhang
@@ -426,7 +345,7 @@
             this.btdonhang.Text = "       Đơn hàng";
             this.btdonhang.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btdonhang.Textcolor = System.Drawing.Color.White;
-            this.btdonhang.TextFont = new System.Drawing.Font("Quicksand", 10F);
+            this.btdonhang.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.btdonhang.Click += new System.EventHandler(this.btdonhang_Click);
             // 
             // panel3
@@ -442,11 +361,11 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Quicksand Medium", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(22, 11);
+            this.label1.Location = new System.Drawing.Point(22, 13);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(191, 28);
+            this.label1.Size = new System.Drawing.Size(196, 24);
             this.label1.TabIndex = 0;
             this.label1.Text = "QUẢN LÝ BÁN HÀNG";
             // 
@@ -470,8 +389,40 @@
             this.panelTongquan.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(195)))), ((int)(((byte)(203)))), ((int)(((byte)(214)))));
             this.panelTongquan.Location = new System.Drawing.Point(235, 50);
             this.panelTongquan.Name = "panelTongquan";
-            this.panelTongquan.Size = new System.Drawing.Size(1042, 470);
+            this.panelTongquan.Size = new System.Drawing.Size(1043, 470);
             this.panelTongquan.TabIndex = 5;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Ebrima", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(873, 7);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(20, 28);
+            this.label5.TabIndex = 9;
+            this.label5.Text = "/";
+            // 
+            // EditAccess
+            // 
+            this.EditAccess.AutoSize = true;
+            this.EditAccess.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.EditAccess.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.EditAccess.Location = new System.Drawing.Point(736, 16);
+            this.EditAccess.Name = "EditAccess";
+            this.EditAccess.Size = new System.Drawing.Size(131, 17);
+            this.EditAccess.TabIndex = 8;
+            this.EditAccess.Text = "Sửa quyền truy cập";
+            this.EditAccess.Click += new System.EventHandler(this.EditAccess_Click);
+            // 
+            // UserDetails
+            // 
+            this.UserDetails.AutoSize = true;
+            this.UserDetails.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.UserDetails.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.UserDetails.Location = new System.Drawing.Point(27, 16);
+            this.UserDetails.Name = "UserDetails";
+            this.UserDetails.Size = new System.Drawing.Size(0, 17);
+            this.UserDetails.TabIndex = 3;
             // 
             // MainForm
             // 
@@ -485,6 +436,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Load += new System.EventHandler(this.MainForm_Load);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel1.ResumeLayout(false);
@@ -497,10 +449,7 @@
         #endregion
 
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label Logout;
         private System.Windows.Forms.Panel minimize;
         private System.Windows.Forms.Panel btexit;
         private System.Windows.Forms.Panel panel1;
@@ -509,7 +458,6 @@
         private Bunifu.Framework.UI.BunifuElipse bunifuElipse1;
         private DevComponents.DotNetBar.Controls.Line line1;
         private Bunifu.Framework.UI.BunifuFlatButton btdonhang;
-        private Bunifu.Framework.UI.BunifuFlatButton btnhapkho;
         private Bunifu.Framework.UI.BunifuFlatButton btkhachhang;
         private Bunifu.Framework.UI.BunifuFlatButton bthanghoa;
         private Bunifu.Framework.UI.BunifuFlatButton bunifuFlatButton1;
@@ -518,6 +466,8 @@
         private System.Windows.Forms.Panel panelTongquan;
         private System.Windows.Forms.Panel panelLine;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label EditAccess;
+        private System.Windows.Forms.Label UserDetails;
     }
 }
 

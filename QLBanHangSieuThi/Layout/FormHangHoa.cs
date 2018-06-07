@@ -88,12 +88,13 @@ namespace QLBanHangSieuThi.Layout
             }
             else
             {
-                adapt = new SqlDataAdapter("select * from dbo.HANGHOA where IsDel=0", con);
+                adapt = new SqlDataAdapter("select * from dbo.HANGHOA where Del=0", con);
             }
             adapt.Fill(dt);
             dataHangHoa.DataSource = dt;
             con.Close();
         }
+
         private void bunifuFlatButton1_Click(object sender, EventArgs e)
         {
             DisplayData();
@@ -143,42 +144,39 @@ namespace QLBanHangSieuThi.Layout
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            if (txtTenSP.Text != "" && txtSL.Text != "" && txtGiaBan.Text != "" && txtGiaNhap.Text != "")
+            if (txtTenSP.Text == "" || txtGiaBan.Text == "" || txtGiaNhap.Text == "")
+            {
+                MessageBox.Show("Nhập thiếu");
+                
+            }
+            else if (!Regex.IsMatch(txtGiaBan.Text, @"^\d+$") || !Regex.IsMatch(txtGiaNhap.Text, @"^\d+$"))
+            {
+                MessageBox.Show("Giá phải nhập số");
+            }
+            else
             {
                 if (MessageBox.Show("Xác nhận thêm mặt hàng.", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
                     con.Open();
                     cmdKG = new SqlCommand("EXECUTE dbo.UID_HANGHOA '" + txtMaSP.Text + "',N'" + txtTenSP.Text + "','" + txtSL.Text + "','" + txtGiaNhap.Text +
-                            "','" + txtGiaBan.Text + "','" + DPngNhap.Text + "',N'Select'", con);
-                    SqlDataReader dta2 = cmdKG.ExecuteReader();
-                    if (dta2.Read())
-                    {
-                        MessageBox.Show("Đã tồn tại mã hàng hóa này");
-                    }
-                    else
-                    {
-                        con.Open();
-                        cmdKG = new SqlCommand("EXECUTE dbo.UID_HANGHOA '" + txtMaSP.Text + "',N'" + txtTenSP.Text + "','" + txtSL.Text + "','" + txtGiaNhap.Text +
-                            "','" + txtGiaBan.Text + "','" + DPngNhap.Text + "',N'Insert'", con);
-                        cmdKG.ExecuteNonQuery();
-                        DisplayData();
+                        "','" + txtGiaBan.Text + "','" + DPngNhap.Text + "',N'Insert'", con);
+                    cmdKG.ExecuteNonQuery();
+                    DisplayData();
 
-                        txtGiaBan.Text = "";
-                        txtGiaNhap.Text = "";
-                        txtSL.Text = "";
-                        txtTenSP.Text = "";
-                        SuggestID();
-                        if (MessageBox.Show("Thêm thành công. Bạn có muốn thêm nữa?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
-                        {
-                            btnInsert.Visible = true;
-                            btnSave.Enabled = false;
-                            txtPanel.Visible = false;
-                            btnCancel.Visible = false;
-                        }
+                    txtGiaBan.Text = "";
+                    txtGiaNhap.Text = "";
+                    txtSL.Text = "";
+                    txtTenSP.Text = "";
+                    SuggestID();
+                    if (MessageBox.Show("Thêm thành công. Bạn có muốn thêm nữa?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
+                    {
+                        btnInsert.Visible = true;
+                        btnSave.Enabled = false;
+                        txtPanel.Visible = false;
+                        btnCancel.Visible = false;
                     }
                 }
-            }
-            else MessageBox.Show("Nhập thiếu");
+            } 
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
@@ -212,6 +210,7 @@ namespace QLBanHangSieuThi.Layout
                     }
                     else
                     {
+                        MessageBox.Show(UserInfo.Quyen);
                         if (MessageBox.Show("Xác nhận XOÁ ", "Xác nhận XOÁ", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                         {
                             if (UserInfo.Quyen == "2")
@@ -227,6 +226,7 @@ namespace QLBanHangSieuThi.Layout
                             con.Close();
                             DisplayData();
                         }
+                        con.Close();
                     }
                 }
             }
@@ -253,16 +253,17 @@ namespace QLBanHangSieuThi.Layout
                 if (dataHangHoa.CurrentCell != null && dataHangHoa.CurrentCell.Value != null)
                 {
                     string mahanghoa = dataHangHoa.Rows[e.RowIndex].Cells[0].Value.ToString();
-                    if ((MessageBox.Show("Phục hồi hiển thự dữ liệu", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes))
+                    string check = dataHangHoa.Rows[e.RowIndex].Cells[6].Value.ToString();
+                    if (check == "true" && UserInfo.Quyen == "2")
                     {
-                        con.Open();
-                        if (UserInfo.Quyen == "2")
+                        if ((MessageBox.Show("Phục hồi hiển thự dữ liệu", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes))
                         {
+                            con.Open();
                             cmdKG = new SqlCommand("EXECUTE dbo.UID_HANGHOA '" + mahanghoa + "',N'','','','','',N'Show'", con);
+                            cmdKG.ExecuteNonQuery();
+                            DisplayData();
+                            con.Close();
                         }
-                        cmdKG.ExecuteNonQuery();
-                        DisplayData();
-                        con.Close();
                     }
                 }
             }
@@ -270,24 +271,36 @@ namespace QLBanHangSieuThi.Layout
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            if (txtTenSP.Text != "" && txtSL.Text != "" && txtGiaBan.Text != "" && txtGiaNhap.Text != "" && UpdateModeOn == true)
+            if (txtTenSP.Text != "" && txtGiaBan.Text != "" && txtGiaNhap.Text != "" && UpdateModeOn == true)
             {
-                if ((MessageBox.Show("Xác nhận SỬA ", "Xác nhận SỬA", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes))
+                if (txtTenSP.Text == "" || txtGiaBan.Text == "" || txtGiaNhap.Text == "")
                 {
-                    con.Open();
-                    cmdKG = new SqlCommand("EXECUTE dbo.UID_HANGHOA '" + txtMaSP.Text + "',N'" + txtTenSP.Text + "','" + txtSL.Text + "','" + txtGiaNhap.Text +
-                        "','" + txtGiaBan.Text + "','" + DPngNhap.Text + "',N'Update'", con);
-                    cmdKG.ExecuteNonQuery();
-                    MessageBox.Show("Sửa thành công");
-                    txtPanel.Visible = false;
-                    btnCancel.Visible = false;
-                    btnSave.Visible = true;
-                    btnUpdate.Visible = false;
-                    btnInsert.Visible = true;
-                    UpdateModeOn = false;
-                    DisplayData();
-                    con.Close();
+                    MessageBox.Show("Nhập thiếu");
+
                 }
+                else if (!Regex.IsMatch(txtGiaBan.Text, @"^\d+$") || !Regex.IsMatch(txtGiaNhap.Text, @"^\d+$"))
+                {
+                    MessageBox.Show("Giá phải nhập số");
+                }
+                else
+                {
+                    if((MessageBox.Show("Xác nhận SỬA ", "Xác nhận SỬA", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes))
+                {
+                        con.Open();
+                        cmdKG = new SqlCommand("EXECUTE dbo.UID_HANGHOA '" + txtMaSP.Text + "',N'" + txtTenSP.Text + "','" + txtSL.Text + "','" + txtGiaNhap.Text +
+                            "','" + txtGiaBan.Text + "','" + DPngNhap.Text + "',N'Update'", con);
+                        cmdKG.ExecuteNonQuery();
+                        MessageBox.Show("Sửa thành công");
+                        txtPanel.Visible = false;
+                        btnCancel.Visible = false;
+                        btnSave.Visible = true;
+                        btnUpdate.Visible = false;
+                        btnInsert.Visible = true;
+                        UpdateModeOn = false;
+                        DisplayData();
+                        con.Close();
+                    }
+                } 
             }
             
         }

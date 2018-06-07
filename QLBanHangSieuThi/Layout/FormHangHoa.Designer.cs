@@ -39,32 +39,38 @@
             this.gIANHAPVAODataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gIABANRADataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nGAYNHAPDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.isDelDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.delDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.hANGHOABindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.sieuThiDataSet_HangHoa = new QLBanHangSieuThi.SieuThiDataSet_HangHoa();
-            this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.btnSearch = new Bunifu.Framework.UI.BunifuFlatButton();
             this.inputSearch = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.ddSearch = new Bunifu.Framework.UI.BunifuDropdown();
             this.label1 = new System.Windows.Forms.Label();
-            this.bunifuElipse2 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.bunifuFlatButton1 = new Bunifu.Framework.UI.BunifuFlatButton();
             this.btnSave = new Bunifu.Framework.UI.BunifuFlatButton();
             this.btnInsert = new Bunifu.Framework.UI.BunifuFlatButton();
             this.txtMaSP = new System.Windows.Forms.TextBox();
             this.txtGiaBan = new System.Windows.Forms.TextBox();
             this.txtGiaNhap = new System.Windows.Forms.TextBox();
-            this.txtSL = new System.Windows.Forms.TextBox();
             this.txtTenSP = new System.Windows.Forms.TextBox();
             this.DPngNhap = new System.Windows.Forms.DateTimePicker();
             this.txtPanel = new System.Windows.Forms.Panel();
-            this.hANGHOATableAdapter = new QLBanHangSieuThi.SieuThiDataSet_HangHoaTableAdapters.HANGHOATableAdapter();
             this.btnCancel = new Bunifu.Framework.UI.BunifuFlatButton();
             this.btnUpdate = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.hANGHOATableAdapter = new QLBanHangSieuThi.SieuThiDataSet_HangHoaTableAdapters.HANGHOATableAdapter();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.txtSL = new System.Windows.Forms.NumericUpDown();
             ((System.ComponentModel.ISupportInitialize)(this.dataHangHoa)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.hANGHOABindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sieuThiDataSet_HangHoa)).BeginInit();
             this.txtPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtSL)).BeginInit();
             this.SuspendLayout();
             // 
             // dataHangHoa
@@ -95,7 +101,7 @@
             this.gIANHAPVAODataGridViewTextBoxColumn,
             this.gIABANRADataGridViewTextBoxColumn,
             this.nGAYNHAPDataGridViewTextBoxColumn,
-            this.isDelDataGridViewCheckBoxColumn});
+            this.delDataGridViewCheckBoxColumn});
             this.dataHangHoa.Cursor = System.Windows.Forms.Cursors.Hand;
             this.dataHangHoa.DataSource = this.hANGHOABindingSource;
             dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
@@ -110,7 +116,7 @@
             this.dataHangHoa.EnableHeadersVisualStyles = false;
             this.dataHangHoa.HeaderBgColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(105)))), ((int)(((byte)(189)))));
             this.dataHangHoa.HeaderForeColor = System.Drawing.Color.White;
-            this.dataHangHoa.Location = new System.Drawing.Point(58, 106);
+            this.dataHangHoa.Location = new System.Drawing.Point(58, 97);
             this.dataHangHoa.Name = "dataHangHoa";
             this.dataHangHoa.ReadOnly = true;
             this.dataHangHoa.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
@@ -148,7 +154,7 @@
             // 
             this.gIANHAPVAODataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.gIANHAPVAODataGridViewTextBoxColumn.DataPropertyName = "GIANHAPVAO";
-            this.gIANHAPVAODataGridViewTextBoxColumn.HeaderText = "Giá nhập vào";
+            this.gIANHAPVAODataGridViewTextBoxColumn.HeaderText = "Giá nhập";
             this.gIANHAPVAODataGridViewTextBoxColumn.Name = "gIANHAPVAODataGridViewTextBoxColumn";
             this.gIANHAPVAODataGridViewTextBoxColumn.ReadOnly = true;
             // 
@@ -156,7 +162,7 @@
             // 
             this.gIABANRADataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.gIABANRADataGridViewTextBoxColumn.DataPropertyName = "GIABANRA";
-            this.gIABANRADataGridViewTextBoxColumn.HeaderText = "Giá bán ra";
+            this.gIABANRADataGridViewTextBoxColumn.HeaderText = "Giá bán";
             this.gIABANRADataGridViewTextBoxColumn.Name = "gIABANRADataGridViewTextBoxColumn";
             this.gIABANRADataGridViewTextBoxColumn.ReadOnly = true;
             // 
@@ -168,13 +174,13 @@
             this.nGAYNHAPDataGridViewTextBoxColumn.Name = "nGAYNHAPDataGridViewTextBoxColumn";
             this.nGAYNHAPDataGridViewTextBoxColumn.ReadOnly = true;
             // 
-            // isDelDataGridViewCheckBoxColumn
+            // delDataGridViewCheckBoxColumn
             // 
-            this.isDelDataGridViewCheckBoxColumn.DataPropertyName = "IsDel";
-            this.isDelDataGridViewCheckBoxColumn.HeaderText = "IsDel";
-            this.isDelDataGridViewCheckBoxColumn.Name = "isDelDataGridViewCheckBoxColumn";
-            this.isDelDataGridViewCheckBoxColumn.ReadOnly = true;
-            this.isDelDataGridViewCheckBoxColumn.Width = 40;
+            this.delDataGridViewCheckBoxColumn.DataPropertyName = "Del";
+            this.delDataGridViewCheckBoxColumn.HeaderText = "Del";
+            this.delDataGridViewCheckBoxColumn.Name = "delDataGridViewCheckBoxColumn";
+            this.delDataGridViewCheckBoxColumn.ReadOnly = true;
+            this.delDataGridViewCheckBoxColumn.Width = 35;
             // 
             // hANGHOABindingSource
             // 
@@ -185,11 +191,6 @@
             // 
             this.sieuThiDataSet_HangHoa.DataSetName = "SieuThiDataSet_HangHoa";
             this.sieuThiDataSet_HangHoa.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // bunifuElipse1
-            // 
-            this.bunifuElipse1.ElipseRadius = 10;
-            this.bunifuElipse1.TargetControl = this.dataHangHoa;
             // 
             // btnSearch
             // 
@@ -212,14 +213,14 @@
             this.btnSearch.IconVisible = true;
             this.btnSearch.IconZoom = 90D;
             this.btnSearch.IsTab = false;
-            this.btnSearch.Location = new System.Drawing.Point(604, 35);
+            this.btnSearch.Location = new System.Drawing.Point(594, 35);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
             this.btnSearch.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
             this.btnSearch.OnHoverTextColor = System.Drawing.Color.White;
             this.btnSearch.selected = false;
-            this.btnSearch.Size = new System.Drawing.Size(155, 48);
-            this.btnSearch.TabIndex = 22;
+            this.btnSearch.Size = new System.Drawing.Size(155, 37);
+            this.btnSearch.TabIndex = 2;
             this.btnSearch.Text = "Tìm kiếm";
             this.btnSearch.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btnSearch.Textcolor = System.Drawing.Color.White;
@@ -238,11 +239,11 @@
             this.inputSearch.LineIdleColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(105)))), ((int)(((byte)(189)))));
             this.inputSearch.LineMouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(69)))), ((int)(((byte)(126)))));
             this.inputSearch.LineThickness = 3;
-            this.inputSearch.Location = new System.Drawing.Point(293, 35);
+            this.inputSearch.Location = new System.Drawing.Point(273, 35);
             this.inputSearch.Margin = new System.Windows.Forms.Padding(4);
             this.inputSearch.Name = "inputSearch";
-            this.inputSearch.Size = new System.Drawing.Size(261, 43);
-            this.inputSearch.TabIndex = 18;
+            this.inputSearch.Size = new System.Drawing.Size(261, 37);
+            this.inputSearch.TabIndex = 1;
             this.inputSearch.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
             // ddSearch
@@ -265,8 +266,8 @@
             this.ddSearch.NomalColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(105)))), ((int)(((byte)(189)))));
             this.ddSearch.onHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(69)))), ((int)(((byte)(126)))));
             this.ddSearch.selectedIndex = 1;
-            this.ddSearch.Size = new System.Drawing.Size(185, 48);
-            this.ddSearch.TabIndex = 17;
+            this.ddSearch.Size = new System.Drawing.Size(155, 37);
+            this.ddSearch.TabIndex = 0;
             // 
             // label1
             // 
@@ -277,11 +278,6 @@
             this.label1.Size = new System.Drawing.Size(141, 20);
             this.label1.TabIndex = 16;
             this.label1.Text = "Tìm kiếm theo mục";
-            // 
-            // bunifuElipse2
-            // 
-            this.bunifuElipse2.ElipseRadius = 12;
-            this.bunifuElipse2.TargetControl = this;
             // 
             // bunifuFlatButton1
             // 
@@ -310,8 +306,8 @@
             this.bunifuFlatButton1.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
             this.bunifuFlatButton1.OnHoverTextColor = System.Drawing.Color.White;
             this.bunifuFlatButton1.selected = false;
-            this.bunifuFlatButton1.Size = new System.Drawing.Size(155, 48);
-            this.bunifuFlatButton1.TabIndex = 31;
+            this.bunifuFlatButton1.Size = new System.Drawing.Size(155, 37);
+            this.bunifuFlatButton1.TabIndex = 3;
             this.bunifuFlatButton1.Text = "Tải lại danh sách";
             this.bunifuFlatButton1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.bunifuFlatButton1.Textcolor = System.Drawing.Color.White;
@@ -345,7 +341,7 @@
             this.btnSave.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
             this.btnSave.OnHoverTextColor = System.Drawing.Color.White;
             this.btnSave.selected = false;
-            this.btnSave.Size = new System.Drawing.Size(155, 48);
+            this.btnSave.Size = new System.Drawing.Size(155, 37);
             this.btnSave.TabIndex = 32;
             this.btnSave.Text = "Lưu";
             this.btnSave.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -380,7 +376,7 @@
             this.btnInsert.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
             this.btnInsert.OnHoverTextColor = System.Drawing.Color.White;
             this.btnInsert.selected = false;
-            this.btnInsert.Size = new System.Drawing.Size(155, 48);
+            this.btnInsert.Size = new System.Drawing.Size(155, 37);
             this.btnInsert.TabIndex = 33;
             this.btnInsert.Text = "Thêm mới";
             this.btnInsert.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -390,63 +386,59 @@
             // 
             // txtMaSP
             // 
-            this.txtMaSP.Location = new System.Drawing.Point(3, 3);
+            this.txtMaSP.Location = new System.Drawing.Point(3, 24);
             this.txtMaSP.Name = "txtMaSP";
             this.txtMaSP.Size = new System.Drawing.Size(160, 20);
-            this.txtMaSP.TabIndex = 34;
+            this.txtMaSP.TabIndex = 0;
             // 
             // txtGiaBan
             // 
-            this.txtGiaBan.Location = new System.Drawing.Point(601, 3);
+            this.txtGiaBan.Location = new System.Drawing.Point(601, 24);
             this.txtGiaBan.Name = "txtGiaBan";
             this.txtGiaBan.Size = new System.Drawing.Size(162, 20);
-            this.txtGiaBan.TabIndex = 35;
+            this.txtGiaBan.TabIndex = 4;
             // 
             // txtGiaNhap
             // 
-            this.txtGiaNhap.Location = new System.Drawing.Point(435, 3);
+            this.txtGiaNhap.Location = new System.Drawing.Point(435, 24);
             this.txtGiaNhap.Name = "txtGiaNhap";
             this.txtGiaNhap.Size = new System.Drawing.Size(160, 20);
-            this.txtGiaNhap.TabIndex = 36;
-            // 
-            // txtSL
-            // 
-            this.txtSL.Location = new System.Drawing.Point(336, 3);
-            this.txtSL.Name = "txtSL";
-            this.txtSL.Size = new System.Drawing.Size(93, 20);
-            this.txtSL.TabIndex = 37;
+            this.txtGiaNhap.TabIndex = 3;
             // 
             // txtTenSP
             // 
-            this.txtTenSP.Location = new System.Drawing.Point(169, 3);
+            this.txtTenSP.Location = new System.Drawing.Point(169, 24);
             this.txtTenSP.Name = "txtTenSP";
             this.txtTenSP.Size = new System.Drawing.Size(161, 20);
-            this.txtTenSP.TabIndex = 38;
+            this.txtTenSP.TabIndex = 1;
             // 
             // DPngNhap
             // 
             this.DPngNhap.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.DPngNhap.Location = new System.Drawing.Point(769, 3);
+            this.DPngNhap.Location = new System.Drawing.Point(769, 24);
             this.DPngNhap.Name = "DPngNhap";
             this.DPngNhap.Size = new System.Drawing.Size(129, 20);
-            this.DPngNhap.TabIndex = 39;
+            this.DPngNhap.TabIndex = 5;
             // 
             // txtPanel
             // 
+            this.txtPanel.Controls.Add(this.txtSL);
+            this.txtPanel.Controls.Add(this.label8);
+            this.txtPanel.Controls.Add(this.label7);
+            this.txtPanel.Controls.Add(this.label6);
+            this.txtPanel.Controls.Add(this.label5);
+            this.txtPanel.Controls.Add(this.label4);
+            this.txtPanel.Controls.Add(this.label3);
+            this.txtPanel.Controls.Add(this.label2);
             this.txtPanel.Controls.Add(this.txtGiaBan);
             this.txtPanel.Controls.Add(this.txtTenSP);
-            this.txtPanel.Controls.Add(this.txtSL);
             this.txtPanel.Controls.Add(this.txtMaSP);
             this.txtPanel.Controls.Add(this.txtGiaNhap);
             this.txtPanel.Controls.Add(this.DPngNhap);
-            this.txtPanel.Location = new System.Drawing.Point(55, 380);
+            this.txtPanel.Location = new System.Drawing.Point(55, 365);
             this.txtPanel.Name = "txtPanel";
-            this.txtPanel.Size = new System.Drawing.Size(933, 38);
+            this.txtPanel.Size = new System.Drawing.Size(933, 48);
             this.txtPanel.TabIndex = 40;
-            // 
-            // hANGHOATableAdapter
-            // 
-            this.hANGHOATableAdapter.ClearBeforeFill = true;
             // 
             // btnCancel
             // 
@@ -475,8 +467,8 @@
             this.btnCancel.OnHovercolor = System.Drawing.Color.Maroon;
             this.btnCancel.OnHoverTextColor = System.Drawing.Color.White;
             this.btnCancel.selected = false;
-            this.btnCancel.Size = new System.Drawing.Size(155, 48);
-            this.btnCancel.TabIndex = 41;
+            this.btnCancel.Size = new System.Drawing.Size(155, 37);
+            this.btnCancel.TabIndex = 5;
             this.btnCancel.Text = "Hủy bỏ";
             this.btnCancel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btnCancel.Textcolor = System.Drawing.Color.White;
@@ -510,13 +502,94 @@
             this.btnUpdate.OnHovercolor = System.Drawing.Color.Goldenrod;
             this.btnUpdate.OnHoverTextColor = System.Drawing.Color.White;
             this.btnUpdate.selected = false;
-            this.btnUpdate.Size = new System.Drawing.Size(155, 48);
-            this.btnUpdate.TabIndex = 42;
+            this.btnUpdate.Size = new System.Drawing.Size(155, 37);
+            this.btnUpdate.TabIndex = 4;
             this.btnUpdate.Text = "Cập nhật";
             this.btnUpdate.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btnUpdate.Textcolor = System.Drawing.Color.White;
             this.btnUpdate.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
+            // 
+            // hANGHOATableAdapter
+            // 
+            this.hANGHOATableAdapter.ClearBeforeFill = true;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(3, 4);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(49, 17);
+            this.label2.TabIndex = 40;
+            this.label2.Text = "Mã SP";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(336, 4);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(64, 17);
+            this.label3.TabIndex = 41;
+            this.label3.Text = "Số lượng";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(166, 4);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(55, 17);
+            this.label4.TabIndex = 42;
+            this.label4.Text = "Tên SP";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(598, 4);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(58, 17);
+            this.label5.TabIndex = 43;
+            this.label5.Text = "Giá bán";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(766, 4);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(77, 17);
+            this.label6.TabIndex = 44;
+            this.label6.Text = "Ngày nhập";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(3, 4);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(49, 17);
+            this.label7.TabIndex = 45;
+            this.label7.Text = "Mã SP";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(435, 4);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(66, 17);
+            this.label8.TabIndex = 46;
+            this.label8.Text = "Giá nhập";
+            // 
+            // txtSL
+            // 
+            this.txtSL.Location = new System.Drawing.Point(337, 23);
+            this.txtSL.Name = "txtSL";
+            this.txtSL.Size = new System.Drawing.Size(92, 20);
+            this.txtSL.TabIndex = 2;
             // 
             // FormHangHoa
             // 
@@ -542,6 +615,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.sieuThiDataSet_HangHoa)).EndInit();
             this.txtPanel.ResumeLayout(false);
             this.txtPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtSL)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -549,33 +623,38 @@
 
         #endregion
         private Bunifu.Framework.UI.BunifuCustomDataGrid dataHangHoa;
-        private Bunifu.Framework.UI.BunifuElipse bunifuElipse1;
         private Bunifu.Framework.UI.BunifuFlatButton btnSearch;
         private Bunifu.Framework.UI.BunifuMaterialTextbox inputSearch;
         private Bunifu.Framework.UI.BunifuDropdown ddSearch;
         private System.Windows.Forms.Label label1;
-        private Bunifu.Framework.UI.BunifuElipse bunifuElipse2;
         private Bunifu.Framework.UI.BunifuFlatButton bunifuFlatButton1;
         private Bunifu.Framework.UI.BunifuFlatButton btnSave;
         private Bunifu.Framework.UI.BunifuFlatButton btnInsert;
         private System.Windows.Forms.TextBox txtMaSP;
         private System.Windows.Forms.TextBox txtGiaBan;
         private System.Windows.Forms.TextBox txtGiaNhap;
-        private System.Windows.Forms.TextBox txtSL;
         private System.Windows.Forms.TextBox txtTenSP;
         private System.Windows.Forms.DateTimePicker DPngNhap;
         private System.Windows.Forms.Panel txtPanel;
-        private System.Windows.Forms.BindingSource hANGHOABindingSource;
-        private SieuThiDataSet_HangHoa sieuThiDataSet_HangHoa;
-        private SieuThiDataSet_HangHoaTableAdapters.HANGHOATableAdapter hANGHOATableAdapter;
+        private Bunifu.Framework.UI.BunifuFlatButton btnCancel;
+        private Bunifu.Framework.UI.BunifuFlatButton btnUpdate;
         private System.Windows.Forms.DataGridViewTextBoxColumn mASANPHAMDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn tENSANPHAMDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn sOLUONGDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn gIANHAPVAODataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn gIABANRADataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn nGAYNHAPDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn isDelDataGridViewCheckBoxColumn;
-        private Bunifu.Framework.UI.BunifuFlatButton btnCancel;
-        private Bunifu.Framework.UI.BunifuFlatButton btnUpdate;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn delDataGridViewCheckBoxColumn;
+        private System.Windows.Forms.BindingSource hANGHOABindingSource;
+        private SieuThiDataSet_HangHoa sieuThiDataSet_HangHoa;
+        private SieuThiDataSet_HangHoaTableAdapters.HANGHOATableAdapter hANGHOATableAdapter;
+        private System.Windows.Forms.NumericUpDown txtSL;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label2;
     }
 }

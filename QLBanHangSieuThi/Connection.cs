@@ -76,7 +76,7 @@ namespace QLBanHangSieuThi
         public void getUserInfo(string user)
         {
             ketnoi();
-            string sql = "select * from dbo.Users where UserName='" + user +"'";
+            string sql = "select * from dbo.USERS where USERNAME='" + user +"'";
             sqlcom = new SqlCommand(sql, sqlconn);
             sqldatar = sqlcom.ExecuteReader(); //select ExecuteReader();  insert/delete ExecuteNonQuery
             if (sqldatar.Read() == true)

@@ -17,16 +17,15 @@ namespace QLBanHangSieuThi.Layout
         public FormDonHang()
         {
             InitializeComponent();
-            SuggestID();
         }
 
         SqlConnection con = new SqlConnection(@"Data Source=.\SQLEXPRESS;Initial Catalog=SieuThi;Integrated Security=True");
         SqlDataAdapter adapt;
         SqlCommand cmdDH;
-        string SugID;
 
         private void FormDonHang_Load(object sender, EventArgs e)
         {
+            dataDonHang.Columns[2].Visible = false;
             DisplayData();
             //add Delete Icon
             DataGridViewImageColumn delbut2 = new DataGridViewImageColumn();
@@ -34,45 +33,9 @@ namespace QLBanHangSieuThi.Layout
             delbut2.Width = 40;
             delbut2.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
             dataDonHang.Columns.Add(delbut2);
-            //Load values for combobox [Mã đơn hàng]
-            LoadMaDH();
-            //Load values for combobox [Mã sản phẩm]
-            con.Open();
-            DataTable dt1 = new DataTable();
-            adapt = new SqlDataAdapter("select [TENSANPHAM] from dbo.[HANGHOA]", con);
-            adapt.Fill(dt1);
-            foreach (DataRow row in dt1.Rows)
-            {
-                cmbMaSp.Items.Add((string)row["TENSANPHAM"]);
-            }
-            con.Close();
-            //Load values for combobox [USERNAME]
-            con.Open();
-            DataTable dt2 = new DataTable();
-            adapt = new SqlDataAdapter("select [USERNAME] from dbo.[USERS]", con);
-            adapt.Fill(dt2);
-            foreach (DataRow row in dt2.Rows)
-            {
-                cmbUserName.Items.Add((string)row["USERNAME"]);
-            }
-            con.Close();
-            //Load values for combobox [Mã khuyến mại]
-            con.Open();
-            DataTable dt3 = new DataTable();
-            adapt = new SqlDataAdapter("select [MAKHUYENMAI] from dbo.[KHUYENMAI]", con);
-            adapt.Fill(dt3);
-            foreach (DataRow row in dt3.Rows)
-            {
-                cmbMaKhuyenMai.Items.Add((string)row["MAKHUYENMAI"]);
-            }
-            con.Close();
-            //Add items XacNhan
             ddSearch.selectedIndex = 0;
 
-            btnSave.Enabled = false;
-            txtPanel.Visible = false;
-            label10.Visible = false;
-            btnCancel.Visible = false;
+
         }
 
         private void DisplayData()
@@ -84,53 +47,7 @@ namespace QLBanHangSieuThi.Layout
             dataDonHang.DataSource = dt;
             con.Close();
         }
-        //Gợi ý mã tiếp theo
-        private void SuggestID()
-        {
-            label10.ForeColor = SystemColors.GrayText;
-            int len, j, num;
-            string MaDonHang= string.Empty, str;
-            con.Close();
-            con.Open();
-            cmdDH = new SqlCommand("SELECT MAX(MADONHANG) as max FROM dbo.DONHANG",con);
-            SqlDataReader dta = cmdDH.ExecuteReader();
-            if (dta.Read()== true)
-            {
-                MaDonHang = dta["max"].ToString();
-                len = MaDonHang.Length;
-                for (j = 0; j < len; j++)
-                {
-                    MaDonHang = (dta["max"].ToString()).Substring(j);
-                    if (Regex.IsMatch(MaDonHang, @"^\d+$"))
-                    {
-                        break;
-                    }
-                }
-                str = (dta["max"].ToString()).Substring(0, j);
-                num = Convert.ToInt32(MaDonHang);
-                num++;
-                SugID = str + num;
-                label10.Text = "Gợi ý mã tiếp theo: " +SugID;
-                txtMaDon.Text = SugID;
-            }
-            con.Close();
-        }
-        //
-        private void LoadMaDH()
-        {
-            txtMaDon.Items.Clear();
-            con.Open();
-            DataTable dt = new DataTable();
-            adapt = new SqlDataAdapter("select [MADONHANG] from dbo.[VIEW_DONHANG]", con);
-            adapt.Fill(dt);
-            foreach (DataRow row in dt.Rows)
-            {
-                txtMaDon.Items.Add((string)row["MADONHANG"]);
-            }
-            con.Close();
-            SuggestID();
-            txtMaDon.Items.Add(SugID);
-        }
+
         private void btnSearch_Click(object sender, EventArgs e)
         {
             string inp = ddSearch.selectedValue.ToString();
@@ -169,160 +86,31 @@ namespace QLBanHangSieuThi.Layout
             dataDonHang.DataSource = dt;
             con.Close();
         }
-        //button tải lại danh sách sau khi tìm kiếm
+        
         private void Reload_Click(object sender, EventArgs e)
         {
             DisplayData();
         }
-        // Nút thêm
-        private void btnInsert_Click(object sender, EventArgs e)
-        {
-            txtPanel.Visible = true;
-            btnSave.Enabled = true;
-            label10.Visible = true;
-            btnInsert.Visible = false;
-            btnCancel.Visible = true;
-        }
-        //Kiểm tra các thông tin nhập vào có tồn tại trong DB không
-        private bool isExist(string inp1, string inp2, string inp3)
-        {
-            con.Open();
-            cmdDH = new SqlCommand("SELECT * FROM dbo.HANGHOA WHERE TENSANPHAM='"+inp1+"'", con);
-            SqlDataReader dta = cmdDH.ExecuteReader();
-            if (dta.Read() == false)
-            {
-                con.Close();
-                MessageBox.Show("Không tồn tại sản phẩm này.");
-                return false;
-            }
-            else
-            {
-                con.Close();
-                con.Open();
-                cmdDH = new SqlCommand("SELECT USERNAME FROM USERS WHERE USERNAME='" + inp2 + "'", con);
-                SqlDataReader dta2 = cmdDH.ExecuteReader();
-                if (dta2.Read() == false)
-                {
-                    con.Close();
-                    MessageBox.Show("Người dùng này không tồn tại.");
-                    return false;
-                }
-                else
-                {
-                    con.Close();
-                    con.Open();
-                    cmdDH = new SqlCommand("SELECT MAKHUYENMAI FROM KHUYENMAI WHERE MAKHUYENMAI ='" + inp3 + "'", con);
-                    SqlDataReader dta3 = cmdDH.ExecuteReader();
-                    if (dta3.Read() == false)
-                    {
-                        MessageBox.Show("Mã khuyến mại không tồn tại.");
-                        con.Close();
-                        return false;
-                    }
-                    else return true;
-                }
-            }
-        }
-        private void btnSave_Click(object sender, EventArgs e)
-        {
-            string masanpham;
-            if (isExist(cmbMaSp.Text,cmbUserName.Text,cmbMaKhuyenMai.Text) && txtMaDon.Text!=string.Empty)
-            {
-                if (MessageBox.Show("Xác nhận thêm hoá đơn.", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-                {
-                    con.Close();
-                    con.Open();
-                    cmdDH = new SqlCommand("SELECT MASANPHAM FROM HANGHOA WHERE TENSANPHAM ='" + cmbMaSp.Text + "'",con);
-                    SqlDataReader dta = cmdDH.ExecuteReader();
-                    if (dta.Read())
-                    {
-                        masanpham = dta["MASANPHAM"].ToString();
-                        string madon = txtMaDon.Text.ToUpper();
-                        con.Close();
-                        con.Open();
-                        cmdDH = new SqlCommand("EXECUTE dbo.SID_DONHANG '" + madon + "','" + masanpham + "','',N'','','','','Select'", con);
-                        SqlDataReader dta2 = cmdDH.ExecuteReader();
-                        if (dta2.Read())
-                        {
-                            MessageBox.Show("Đã tồn tại mã đơn và mặt hàng này");
-                        }
-                        else
-                        {
-                            con.Close();
-                            con.Open();
-                            cmdDH = new SqlCommand("EXECUTE dbo.SID_DONHANG '" + txtMaDon.Text + "','" + masanpham + "','"+cmbUserName.Text+"',N'"+txtTenDonHang.Text+"','"+cmbMaKhuyenMai.Text+"','"+dateDat.Text+"','"+dateGiao.Text+"','Insert'", con);
-                            cmdDH.ExecuteNonQuery();
-                            DisplayData();
 
-                            txtMaDon.ResetText();
-                            cmbMaSp.ResetText();
-                            cmbUserName.ResetText();
-                            txtTenDonHang.ResetText();
-                            cmbMaKhuyenMai.ResetText();
-                            //gợi ý mã mới và thêm
-                            SuggestID();
-                            txtMaDon.Items.Add(SugID);
-                            if (MessageBox.Show("Thêm thành công. Bạn có muốn thêm nữa?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
-                            {
-                                btnInsert.Visible = true;
-                                btnSave.Enabled = false;
-                                txtPanel.Visible = false;
-                                label10.Visible = false;
-                                btnCancel.Visible = false;
-                            }
-                        }
-                        con.Close();   
-                    }
-                }
-            }
-        }
-        //click icon thùng rác
         private void dataDonHang_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (dataDonHang.CurrentCell.ColumnIndex.Equals(7) && e.RowIndex != -1)
+            string maDH = dataDonHang.Rows[e.RowIndex].Cells[0].Value.ToString();
+            string maSP = dataDonHang.Rows[e.RowIndex].Cells[2].Value.ToString();
+            if (MessageBox.Show("Xác nhận XOÁ đơn hàng "+maDH, "Xác nhận XOÁ", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
-                if (dataDonHang.CurrentCell != null && dataDonHang.CurrentCell.Value != null)
-                {
-                    string madonhang = dataDonHang.Rows[e.RowIndex].Cells[0].Value.ToString();
-                    string masanpham = dataDonHang.Rows[e.RowIndex].Cells[1].Value.ToString();
-                    con.Open();
-                    cmdDH = new SqlCommand("SELECT MASANPHAM FROM HANGHOA WHERE TENSANPHAM ='" + masanpham + "'", con);
-                    SqlDataReader dta = cmdDH.ExecuteReader();
-                    if (dta.Read())
-                    {
-                        masanpham = dta["MASANPHAM"].ToString();
-                        con.Close();
-                        if ((MessageBox.Show("Xác nhận XOÁ ", "Xác nhận XOÁ", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes))
-                        {
-                            con.Open();
-                            cmdDH = new SqlCommand("EXECUTE dbo.SID_DONHANG '" + madonhang + "','" + masanpham + "','',N'','','','','Delete'", con);
-                            cmdDH.ExecuteNonQuery();
-                            con.Close();
-                            LoadMaDH();
-                        }
-                    }
-                    else
-                    {
-                        MessageBox.Show("Có lỗi xảy ra");
-                    }
-                }
+                con.Open();
+                cmdDH = new SqlCommand("EXECUTE UID_DONHANG '"+maDH+"','"+maSP+"','','','','','','','Delete'",con);
+                cmdDH.ExecuteNonQuery();
+                con.Close();
+                DisplayData();
             }
-            con.Close();
-            DisplayData();
         }
 
-        private void btnCancel_Click(object sender, EventArgs e)
+        private void btnInsert_Click(object sender, EventArgs e)
         {
-            txtMaDon.ResetText();
-            cmbMaSp.ResetText();
-            cmbUserName.ResetText();
-            txtTenDonHang.ResetText();
-            cmbMaKhuyenMai.ResetText();
-            btnInsert.Visible = true;
-            btnSave.Enabled = false;
-            txtPanel.Visible = false;
-            label10.Visible = false;
-            btnCancel.Visible = false;
+            sub_formDonHang themdonhang = new sub_formDonHang();
+            themdonhang.ShowDialog();
+            DisplayData();
         }
     }
 }

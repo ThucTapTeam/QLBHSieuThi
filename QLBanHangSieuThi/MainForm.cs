@@ -28,11 +28,6 @@ namespace QLBanHangSieuThi
             }
         }
 
-        private void line1_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void btexit_Click(object sender, MouseEventArgs e)
         {
             Application.Exit();
@@ -56,14 +51,6 @@ namespace QLBanHangSieuThi
             panelLine.Height = btdonhang.Height-2;
             panelLine.Top = btdonhang.Top+1;
             
-        }
-
-        private void btnhapkho_Click(object sender, EventArgs e)
-        {
-            panelTongquan.Controls.Clear();
-            panelTongquan.Controls.Add(new Layout.FormNhapKho());
-            panelLine.Height = btnhapkho.Height-2;
-            panelLine.Top = btnhapkho.Top+1;
         }
 
         private void bthanghoa_Click(object sender, EventArgs e)
@@ -96,6 +83,32 @@ namespace QLBanHangSieuThi
             panelTongquan.Controls.Add(new Layout.FormDoanhThu());
             panelLine.Height = btdoanhthu.Height - 2;
             panelLine.Top = btdoanhthu.Top + 1;
+        }
+
+        private void MainForm_Load(object sender, EventArgs e)
+        {
+            string privilege = string.Empty;
+            if (UserInfo.Quyen == "2") privilege = "Cao";
+            if (UserInfo.Quyen == "1") 
+            {
+                privilege = "Trung bình";
+                EditAccess.Enabled = false;
+                label5.Enabled = false;
+            }
+            UserDetails.Text = "Người dùng: " + UserInfo.HoTen+"   Cấp: "+privilege;
+        }
+
+        private void Logout_Click(object sender, EventArgs e)
+        {
+            Login login = new Login();
+            this.Close();
+            login.Show();
+        }
+
+        private void EditAccess_Click(object sender, EventArgs e)
+        {
+            panelTongquan.Controls.Clear();
+            panelTongquan.Controls.Add(new Layout.FormUsers());
         }
     }
 }

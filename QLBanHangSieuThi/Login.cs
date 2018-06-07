@@ -17,7 +17,6 @@ namespace QLBanHangSieuThi
         {
             InitializeComponent();
         }
-
         
         private void btexit_Click(object sender, EventArgs e)
         {
@@ -36,11 +35,11 @@ namespace QLBanHangSieuThi
             string pass = tfpass.Text.ToLower();
             if(cn.ktlogin(user,"Select * from USERS",0)==true && cn.ktlogin(pass,"Select * from USERS",1)==true)
             {
+                cn.getUserInfo(user);
                 this.Hide();
                 MainForm mf = new MainForm();
                 mf.Show();
             }
-            cn.getUserInfo(user);
         }
     }
 }

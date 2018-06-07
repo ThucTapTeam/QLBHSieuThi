@@ -8,8 +8,8 @@ namespace QLBanHangSieuThi
 {
     class UserInfo
     {
-        public static string ID { get; set; }
-        public static string HoTen { get; set; }
-        public static string Quyen { get; set; }
+        public static string ID = string.Empty;
+        public static string HoTen = string.Empty;
+        public static string Quyen = string.Empty;
     }
 }
