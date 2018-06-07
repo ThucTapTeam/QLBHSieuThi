@@ -1,18 +1,18 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<xs:schema id="QLBHSieuThiDataSet_HANGHOA" targetNamespace="http://tempuri.org/QLBHSieuThiDataSet_HANGHOA.xsd" xmlns:mstns="http://tempuri.org/QLBHSieuThiDataSet_HANGHOA.xsd" xmlns="http://tempuri.org/QLBHSieuThiDataSet_HANGHOA.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+<xs:schema id="SieuThiDataSet_HangHoa" targetNamespace="http://tempuri.org/SieuThiDataSet_HangHoa.xsd" xmlns:mstns="http://tempuri.org/SieuThiDataSet_HangHoa.xsd" xmlns="http://tempuri.org/SieuThiDataSet_HangHoa.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
   <xs:annotation>
     <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
       <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
         <Connections>
-          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="QLBHSieuThiConnectionString1" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="QLBHSieuThiConnectionString1 (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.QLBanHangSieuThi.Properties.Settings.GlobalReference.Default.QLBHSieuThiConnectionString1" Provider="System.Data.SqlClient" />
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="SieuThiConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="SieuThiConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.QLBanHangSieuThi.Properties.Settings.GlobalReference.Default.SieuThiConnectionString" Provider="System.Data.SqlClient" />
         </Connections>
         <Tables>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="HANGHOATableAdapter" GeneratorDataComponentClassName="HANGHOATableAdapter" Name="HANGHOA" UserDataComponentName="HANGHOATableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="QLBHSieuThiConnectionString1 (Settings)" DbObjectName="QLBHSieuThi.dbo.HANGHOA" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="SieuThiConnectionString (Settings)" DbObjectName="SieuThi.dbo.HANGHOA" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>DELETE FROM [dbo].[HANGHOA] WHERE (([MASANPHAM] = @Original_MASANPHAM) AND ((@IsNull_TENSANPHAM = 1 AND [TENSANPHAM] IS NULL) OR ([TENSANPHAM] = @Original_TENSANPHAM)) AND ((@IsNull_SOLUONG = 1 AND [SOLUONG] IS NULL) OR ([SOLUONG] = @Original_SOLUONG)) AND ((@IsNull_GIANHAPVAO = 1 AND [GIANHAPVAO] IS NULL) OR ([GIANHAPVAO] = @Original_GIANHAPVAO)) AND ((@IsNull_GIABANRA = 1 AND [GIABANRA] IS NULL) OR ([GIABANRA] = @Original_GIABANRA)) AND ((@IsNull_NGAYNHAP = 1 AND [NGAYNHAP] IS NULL) OR ([NGAYNHAP] = @Original_NGAYNHAP)) AND ((@IsNull_KIEMTRALOI = 1 AND [KIEMTRALOI] IS NULL) OR ([KIEMTRALOI] = @Original_KIEMTRALOI)))</CommandText>
+                    <CommandText>DELETE FROM [dbo].[HANGHOA] WHERE (([MASANPHAM] = @Original_MASANPHAM) AND ((@IsNull_TENSANPHAM = 1 AND [TENSANPHAM] IS NULL) OR ([TENSANPHAM] = @Original_TENSANPHAM)) AND ((@IsNull_SOLUONG = 1 AND [SOLUONG] IS NULL) OR ([SOLUONG] = @Original_SOLUONG)) AND ((@IsNull_GIANHAPVAO = 1 AND [GIANHAPVAO] IS NULL) OR ([GIANHAPVAO] = @Original_GIANHAPVAO)) AND ((@IsNull_GIABANRA = 1 AND [GIABANRA] IS NULL) OR ([GIABANRA] = @Original_GIABANRA)) AND ((@IsNull_NGAYNHAP = 1 AND [NGAYNHAP] IS NULL) OR ([NGAYNHAP] = @Original_NGAYNHAP)) AND ((@IsNull_Del = 1 AND [Del] IS NULL) OR ([Del] = @Original_Del)))</CommandText>
                     <Parameters>
                       <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_MASANPHAM" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="MASANPHAM" SourceColumnNullMapping="false" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_TENSANPHAM" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="TENSANPHAM" SourceColumnNullMapping="true" SourceVersion="Original" />
@@ -25,15 +25,15 @@
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_GIABANRA" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="GIABANRA" SourceColumnNullMapping="false" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_NGAYNHAP" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="NGAYNHAP" SourceColumnNullMapping="true" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Date" Direction="Input" ParameterName="@Original_NGAYNHAP" Precision="0" ProviderType="Date" Scale="0" Size="0" SourceColumn="NGAYNHAP" SourceColumnNullMapping="false" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_KIEMTRALOI" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="KIEMTRALOI" SourceColumnNullMapping="true" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_KIEMTRALOI" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="KIEMTRALOI" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_Del" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Del" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Boolean" Direction="Input" ParameterName="@Original_Del" Precision="0" ProviderType="Bit" Scale="0" Size="0" SourceColumn="Del" SourceColumnNullMapping="false" SourceVersion="Original" />
                     </Parameters>
                   </DbCommand>
                 </DeleteCommand>
                 <InsertCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>INSERT INTO [dbo].[HANGHOA] ([MASANPHAM], [TENSANPHAM], [SOLUONG], [GIANHAPVAO], [GIABANRA], [NGAYNHAP], [KIEMTRALOI]) VALUES (@MASANPHAM, @TENSANPHAM, @SOLUONG, @GIANHAPVAO, @GIABANRA, @NGAYNHAP, @KIEMTRALOI);
-SELECT MASANPHAM, TENSANPHAM, SOLUONG, GIANHAPVAO, GIABANRA, NGAYNHAP, KIEMTRALOI FROM HANGHOA WHERE (MASANPHAM = @MASANPHAM)</CommandText>
+                    <CommandText>INSERT INTO [dbo].[HANGHOA] ([MASANPHAM], [TENSANPHAM], [SOLUONG], [GIANHAPVAO], [GIABANRA], [NGAYNHAP], [Del]) VALUES (@MASANPHAM, @TENSANPHAM, @SOLUONG, @GIANHAPVAO, @GIABANRA, @NGAYNHAP, @Del);
+SELECT MASANPHAM, TENSANPHAM, SOLUONG, GIANHAPVAO, GIABANRA, NGAYNHAP, Del FROM HANGHOA WHERE (MASANPHAM = @MASANPHAM)</CommandText>
                     <Parameters>
                       <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@MASANPHAM" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="MASANPHAM" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@TENSANPHAM" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="TENSANPHAM" SourceColumnNullMapping="false" SourceVersion="Current" />
@@ -41,20 +41,20 @@ SELECT MASANPHAM, TENSANPHAM, SOLUONG, GIANHAPVAO, GIABANRA, NGAYNHAP, KIEMTRALO
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@GIANHAPVAO" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="GIANHAPVAO" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@GIABANRA" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="GIABANRA" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Date" Direction="Input" ParameterName="@NGAYNHAP" Precision="0" ProviderType="Date" Scale="0" Size="0" SourceColumn="NGAYNHAP" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@KIEMTRALOI" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="KIEMTRALOI" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Boolean" Direction="Input" ParameterName="@Del" Precision="0" ProviderType="Bit" Scale="0" Size="0" SourceColumn="Del" SourceColumnNullMapping="false" SourceVersion="Current" />
                     </Parameters>
                   </DbCommand>
                 </InsertCommand>
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>SELECT MASANPHAM, TENSANPHAM, SOLUONG, GIANHAPVAO, GIABANRA, NGAYNHAP, KIEMTRALOI FROM dbo.HANGHOA</CommandText>
+                    <CommandText>SELECT MASANPHAM, TENSANPHAM, SOLUONG, GIANHAPVAO, GIABANRA, NGAYNHAP, Del FROM dbo.HANGHOA</CommandText>
                     <Parameters />
                   </DbCommand>
                 </SelectCommand>
                 <UpdateCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>UPDATE [dbo].[HANGHOA] SET [MASANPHAM] = @MASANPHAM, [TENSANPHAM] = @TENSANPHAM, [SOLUONG] = @SOLUONG, [GIANHAPVAO] = @GIANHAPVAO, [GIABANRA] = @GIABANRA, [NGAYNHAP] = @NGAYNHAP, [KIEMTRALOI] = @KIEMTRALOI WHERE (([MASANPHAM] = @Original_MASANPHAM) AND ((@IsNull_TENSANPHAM = 1 AND [TENSANPHAM] IS NULL) OR ([TENSANPHAM] = @Original_TENSANPHAM)) AND ((@IsNull_SOLUONG = 1 AND [SOLUONG] IS NULL) OR ([SOLUONG] = @Original_SOLUONG)) AND ((@IsNull_GIANHAPVAO = 1 AND [GIANHAPVAO] IS NULL) OR ([GIANHAPVAO] = @Original_GIANHAPVAO)) AND ((@IsNull_GIABANRA = 1 AND [GIABANRA] IS NULL) OR ([GIABANRA] = @Original_GIABANRA)) AND ((@IsNull_NGAYNHAP = 1 AND [NGAYNHAP] IS NULL) OR ([NGAYNHAP] = @Original_NGAYNHAP)) AND ((@IsNull_KIEMTRALOI = 1 AND [KIEMTRALOI] IS NULL) OR ([KIEMTRALOI] = @Original_KIEMTRALOI)));
-SELECT MASANPHAM, TENSANPHAM, SOLUONG, GIANHAPVAO, GIABANRA, NGAYNHAP, KIEMTRALOI FROM HANGHOA WHERE (MASANPHAM = @MASANPHAM)</CommandText>
+                    <CommandText>UPDATE [dbo].[HANGHOA] SET [MASANPHAM] = @MASANPHAM, [TENSANPHAM] = @TENSANPHAM, [SOLUONG] = @SOLUONG, [GIANHAPVAO] = @GIANHAPVAO, [GIABANRA] = @GIABANRA, [NGAYNHAP] = @NGAYNHAP, [Del] = @Del WHERE (([MASANPHAM] = @Original_MASANPHAM) AND ((@IsNull_TENSANPHAM = 1 AND [TENSANPHAM] IS NULL) OR ([TENSANPHAM] = @Original_TENSANPHAM)) AND ((@IsNull_SOLUONG = 1 AND [SOLUONG] IS NULL) OR ([SOLUONG] = @Original_SOLUONG)) AND ((@IsNull_GIANHAPVAO = 1 AND [GIANHAPVAO] IS NULL) OR ([GIANHAPVAO] = @Original_GIANHAPVAO)) AND ((@IsNull_GIABANRA = 1 AND [GIABANRA] IS NULL) OR ([GIABANRA] = @Original_GIABANRA)) AND ((@IsNull_NGAYNHAP = 1 AND [NGAYNHAP] IS NULL) OR ([NGAYNHAP] = @Original_NGAYNHAP)) AND ((@IsNull_Del = 1 AND [Del] IS NULL) OR ([Del] = @Original_Del)));
+SELECT MASANPHAM, TENSANPHAM, SOLUONG, GIANHAPVAO, GIABANRA, NGAYNHAP, Del FROM HANGHOA WHERE (MASANPHAM = @MASANPHAM)</CommandText>
                     <Parameters>
                       <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@MASANPHAM" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="MASANPHAM" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@TENSANPHAM" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="TENSANPHAM" SourceColumnNullMapping="false" SourceVersion="Current" />
@@ -62,7 +62,7 @@ SELECT MASANPHAM, TENSANPHAM, SOLUONG, GIANHAPVAO, GIABANRA, NGAYNHAP, KIEMTRALO
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@GIANHAPVAO" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="GIANHAPVAO" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@GIABANRA" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="GIABANRA" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Date" Direction="Input" ParameterName="@NGAYNHAP" Precision="0" ProviderType="Date" Scale="0" Size="0" SourceColumn="NGAYNHAP" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@KIEMTRALOI" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="KIEMTRALOI" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Boolean" Direction="Input" ParameterName="@Del" Precision="0" ProviderType="Bit" Scale="0" Size="0" SourceColumn="Del" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_MASANPHAM" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="MASANPHAM" SourceColumnNullMapping="false" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_TENSANPHAM" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="TENSANPHAM" SourceColumnNullMapping="true" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_TENSANPHAM" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="TENSANPHAM" SourceColumnNullMapping="false" SourceVersion="Original" />
@@ -74,8 +74,8 @@ SELECT MASANPHAM, TENSANPHAM, SOLUONG, GIANHAPVAO, GIABANRA, NGAYNHAP, KIEMTRALO
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_GIABANRA" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="GIABANRA" SourceColumnNullMapping="false" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_NGAYNHAP" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="NGAYNHAP" SourceColumnNullMapping="true" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Date" Direction="Input" ParameterName="@Original_NGAYNHAP" Precision="0" ProviderType="Date" Scale="0" Size="0" SourceColumn="NGAYNHAP" SourceColumnNullMapping="false" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_KIEMTRALOI" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="KIEMTRALOI" SourceColumnNullMapping="true" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_KIEMTRALOI" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="KIEMTRALOI" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_Del" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Del" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Boolean" Direction="Input" ParameterName="@Original_Del" Precision="0" ProviderType="Bit" Scale="0" Size="0" SourceColumn="Del" SourceColumnNullMapping="false" SourceVersion="Original" />
                     </Parameters>
                   </DbCommand>
                 </UpdateCommand>
@@ -88,7 +88,7 @@ SELECT MASANPHAM, TENSANPHAM, SOLUONG, GIANHAPVAO, GIABANRA, NGAYNHAP, KIEMTRALO
               <Mapping SourceColumn="GIANHAPVAO" DataSetColumn="GIANHAPVAO" />
               <Mapping SourceColumn="GIABANRA" DataSetColumn="GIABANRA" />
               <Mapping SourceColumn="NGAYNHAP" DataSetColumn="NGAYNHAP" />
-              <Mapping SourceColumn="KIEMTRALOI" DataSetColumn="KIEMTRALOI" />
+              <Mapping SourceColumn="Del" DataSetColumn="Del" />
             </Mappings>
             <Sources />
           </TableAdapter>
@@ -97,7 +97,7 @@ SELECT MASANPHAM, TENSANPHAM, SOLUONG, GIANHAPVAO, GIABANRA, NGAYNHAP, KIEMTRALO
       </DataSource>
     </xs:appinfo>
   </xs:annotation>
-  <xs:element name="QLBHSieuThiDataSet_HANGHOA" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="QLBHSieuThiDataSet_HANGHOA" msprop:Generator_UserDSName="QLBHSieuThiDataSet_HANGHOA">
+  <xs:element name="SieuThiDataSet_HangHoa" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="SieuThiDataSet_HangHoa" msprop:Generator_UserDSName="SieuThiDataSet_HangHoa">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
         <xs:element name="HANGHOA" msprop:Generator_TableClassName="HANGHOADataTable" msprop:Generator_TableVarName="tableHANGHOA" msprop:Generator_TablePropName="HANGHOA" msprop:Generator_RowDeletingName="HANGHOARowDeleting" msprop:Generator_RowChangingName="HANGHOARowChanging" msprop:Generator_RowEvHandlerName="HANGHOARowChangeEventHandler" msprop:Generator_RowDeletedName="HANGHOARowDeleted" msprop:Generator_UserTableName="HANGHOA" msprop:Generator_RowChangedName="HANGHOARowChanged" msprop:Generator_RowEvArgName="HANGHOARowChangeEvent" msprop:Generator_RowClassName="HANGHOARow">
@@ -121,7 +121,7 @@ SELECT MASANPHAM, TENSANPHAM, SOLUONG, GIANHAPVAO, GIABANRA, NGAYNHAP, KIEMTRALO
               <xs:element name="GIANHAPVAO" msprop:Generator_ColumnVarNameInTable="columnGIANHAPVAO" msprop:Generator_ColumnPropNameInRow="GIANHAPVAO" msprop:Generator_ColumnPropNameInTable="GIANHAPVAOColumn" msprop:Generator_UserColumnName="GIANHAPVAO" type="xs:int" minOccurs="0" />
               <xs:element name="GIABANRA" msprop:Generator_ColumnVarNameInTable="columnGIABANRA" msprop:Generator_ColumnPropNameInRow="GIABANRA" msprop:Generator_ColumnPropNameInTable="GIABANRAColumn" msprop:Generator_UserColumnName="GIABANRA" type="xs:int" minOccurs="0" />
               <xs:element name="NGAYNHAP" msprop:Generator_ColumnVarNameInTable="columnNGAYNHAP" msprop:Generator_ColumnPropNameInRow="NGAYNHAP" msprop:Generator_ColumnPropNameInTable="NGAYNHAPColumn" msprop:Generator_UserColumnName="NGAYNHAP" type="xs:dateTime" minOccurs="0" />
-              <xs:element name="KIEMTRALOI" msprop:Generator_ColumnVarNameInTable="columnKIEMTRALOI" msprop:Generator_ColumnPropNameInRow="KIEMTRALOI" msprop:Generator_ColumnPropNameInTable="KIEMTRALOIColumn" msprop:Generator_UserColumnName="KIEMTRALOI" type="xs:int" minOccurs="0" />
+              <xs:element name="Del" msprop:Generator_ColumnVarNameInTable="columnDel" msprop:Generator_ColumnPropNameInRow="Del" msprop:Generator_ColumnPropNameInTable="DelColumn" msprop:Generator_UserColumnName="Del" type="xs:boolean" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>

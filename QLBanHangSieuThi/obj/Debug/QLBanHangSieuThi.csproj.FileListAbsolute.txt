@@ -80,3 +80,32 @@ C:\Users\Admin\Downloads\Kỳ 2 năm 3\Thực tập nhóm_TH14\QLBanHangSieuThi-
 C:\Users\Admin\Downloads\Kỳ 2 năm 3\Thực tập nhóm_TH14\QLBanHangSieuThi-master (1)\QLBHSieuThi\QLBanHangSieuThi\QLBanHangSieuThi\obj\Debug\QLBanHangSieuThi.csproj.CoreCompileInputs.cache
 C:\Users\Admin\Downloads\Kỳ 2 năm 3\Thực tập nhóm_TH14\QLBanHangSieuThi-master (1)\QLBHSieuThi\QLBanHangSieuThi\QLBanHangSieuThi\obj\Debug\QLBanHangSieuThi.exe
 C:\Users\Admin\Downloads\Kỳ 2 năm 3\Thực tập nhóm_TH14\QLBanHangSieuThi-master (1)\QLBHSieuThi\QLBanHangSieuThi\QLBanHangSieuThi\obj\Debug\QLBanHangSieuThi.pdb
+C:\Users\Admin\Downloads\Kỳ 2 năm 3\Thực tập nhóm_TH14\QLBanHangSieuThi\QLBanHangSieuThi\bin\Debug\QLBanHangSieuThi.exe.config
+C:\Users\Admin\Downloads\Kỳ 2 năm 3\Thực tập nhóm_TH14\QLBanHangSieuThi\QLBanHangSieuThi\bin\Debug\QLBanHangSieuThi.exe
+C:\Users\Admin\Downloads\Kỳ 2 năm 3\Thực tập nhóm_TH14\QLBanHangSieuThi\QLBanHangSieuThi\bin\Debug\QLBanHangSieuThi.pdb
+C:\Users\Admin\Downloads\Kỳ 2 năm 3\Thực tập nhóm_TH14\QLBanHangSieuThi\QLBanHangSieuThi\bin\Debug\Bunifu_UI_v1.5.3.dll
+C:\Users\Admin\Downloads\Kỳ 2 năm 3\Thực tập nhóm_TH14\QLBanHangSieuThi\QLBanHangSieuThi\bin\Debug\DevComponents.DotNetBar.Charts.dll
+C:\Users\Admin\Downloads\Kỳ 2 năm 3\Thực tập nhóm_TH14\QLBanHangSieuThi\QLBanHangSieuThi\bin\Debug\DevComponents.DotNetBar.Schedule.dll
+C:\Users\Admin\Downloads\Kỳ 2 năm 3\Thực tập nhóm_TH14\QLBanHangSieuThi\QLBanHangSieuThi\bin\Debug\DevComponents.DotNetBar.SuperGrid.dll
+C:\Users\Admin\Downloads\Kỳ 2 năm 3\Thực tập nhóm_TH14\QLBanHangSieuThi\QLBanHangSieuThi\bin\Debug\DevComponents.DotNetBar2.dll
+C:\Users\Admin\Downloads\Kỳ 2 năm 3\Thực tập nhóm_TH14\QLBanHangSieuThi\QLBanHangSieuThi\bin\Debug\DevComponents.Instrumentation.dll
+C:\Users\Admin\Downloads\Kỳ 2 năm 3\Thực tập nhóm_TH14\QLBanHangSieuThi\QLBanHangSieuThi\bin\Debug\DevComponents.DotNetBar.Schedule.xml
+C:\Users\Admin\Downloads\Kỳ 2 năm 3\Thực tập nhóm_TH14\QLBanHangSieuThi\QLBanHangSieuThi\bin\Debug\DevComponents.DotNetBar.SuperGrid.xml
+C:\Users\Admin\Downloads\Kỳ 2 năm 3\Thực tập nhóm_TH14\QLBanHangSieuThi\QLBanHangSieuThi\bin\Debug\DevComponents.DotNetBar2.xml
+C:\Users\Admin\Downloads\Kỳ 2 năm 3\Thực tập nhóm_TH14\QLBanHangSieuThi\QLBanHangSieuThi\bin\Debug\DevComponents.Instrumentation.xml
+C:\Users\Admin\Downloads\Kỳ 2 năm 3\Thực tập nhóm_TH14\QLBanHangSieuThi\QLBanHangSieuThi\obj\Debug\QLBanHangSieuThi.csprojResolveAssemblyReference.cache
+C:\Users\Admin\Downloads\Kỳ 2 năm 3\Thực tập nhóm_TH14\QLBanHangSieuThi\QLBanHangSieuThi\obj\Debug\QLBanHangSieuThi.Layout.FormDoanhThu.resources
+C:\Users\Admin\Downloads\Kỳ 2 năm 3\Thực tập nhóm_TH14\QLBanHangSieuThi\QLBanHangSieuThi\obj\Debug\QLBanHangSieuThi.Layout.FormDonHang.resources
+C:\Users\Admin\Downloads\Kỳ 2 năm 3\Thực tập nhóm_TH14\QLBanHangSieuThi\QLBanHangSieuThi\obj\Debug\QLBanHangSieuThi.Layout.FormHangHoa.resources
+C:\Users\Admin\Downloads\Kỳ 2 năm 3\Thực tập nhóm_TH14\QLBanHangSieuThi\QLBanHangSieuThi\obj\Debug\QLBanHangSieuThi.Layout.FormKhachHang.resources
+C:\Users\Admin\Downloads\Kỳ 2 năm 3\Thực tập nhóm_TH14\QLBanHangSieuThi\QLBanHangSieuThi\obj\Debug\QLBanHangSieuThi.Layout.FormTongQuan.resources
+C:\Users\Admin\Downloads\Kỳ 2 năm 3\Thực tập nhóm_TH14\QLBanHangSieuThi\QLBanHangSieuThi\obj\Debug\QLBanHangSieuThi.Login.resources
+C:\Users\Admin\Downloads\Kỳ 2 năm 3\Thực tập nhóm_TH14\QLBanHangSieuThi\QLBanHangSieuThi\obj\Debug\QLBanHangSieuThi.MainForm.resources
+C:\Users\Admin\Downloads\Kỳ 2 năm 3\Thực tập nhóm_TH14\QLBanHangSieuThi\QLBanHangSieuThi\obj\Debug\QLBanHangSieuThi.Properties.Resources.resources
+C:\Users\Admin\Downloads\Kỳ 2 năm 3\Thực tập nhóm_TH14\QLBanHangSieuThi\QLBanHangSieuThi\obj\Debug\QLBanHangSieuThi.csproj.GenerateResource.Cache
+C:\Users\Admin\Downloads\Kỳ 2 năm 3\Thực tập nhóm_TH14\QLBanHangSieuThi\QLBanHangSieuThi\obj\Debug\QLBanHangSieuThi.csproj.CoreCompileInputs.cache
+C:\Users\Admin\Downloads\Kỳ 2 năm 3\Thực tập nhóm_TH14\QLBanHangSieuThi\QLBanHangSieuThi\obj\Debug\QLBanHangSieuThi.exe
+C:\Users\Admin\Downloads\Kỳ 2 năm 3\Thực tập nhóm_TH14\QLBanHangSieuThi\QLBanHangSieuThi\obj\Debug\QLBanHangSieuThi.pdb
+C:\Users\Admin\Downloads\Kỳ 2 năm 3\Thực tập nhóm_TH14\QLBanHangSieuThi\QLBanHangSieuThi\obj\Debug\QLBanHangSieuThi.Layout.FormKhuyenMai.resources
+C:\Users\Admin\Downloads\Kỳ 2 năm 3\Thực tập nhóm_TH14\QLBanHangSieuThi\QLBanHangSieuThi\obj\Debug\QLBanHangSieuThi.Layout.FormUsers.resources
+C:\Users\Admin\Downloads\Kỳ 2 năm 3\Thực tập nhóm_TH14\QLBanHangSieuThi\QLBanHangSieuThi\obj\Debug\QLBanHangSieuThi.Layout.sub_formDonHang.resources

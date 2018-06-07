@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data.SqlClient;
 using System.Data;
+using System.Windows.Forms;
 
 namespace QLBanHangSieuThi
 {
@@ -41,21 +42,21 @@ namespace QLBanHangSieuThi
             return ok;
             
         }
-        public string tongquan(string strsql,byte cot)
+        public string tongquan(string strsql, byte cot)
         {
-            string temp=null;
+            string temp = null;
             ketnoi();
             sqlcom = new SqlCommand(strsql, sqlconn);
             sqldatar = sqlcom.ExecuteReader();
-            while(sqldatar.Read())
+            while (sqldatar.Read())
             {
-                temp=sqldatar[cot].ToString();
-                
+                temp = sqldatar[cot].ToString();
+
             }
             ngatketnoi();
             return temp;
         }
-     
+
         public bool tongquan1(string data,string strsql, byte cot)
         {
             bool ok = false;
@@ -68,11 +69,24 @@ namespace QLBanHangSieuThi
                 {
                     ok = true;
                 }
-
             }
             ngatketnoi();
             return ok;
         }
-        
+        public void getUserInfo(string user)
+        {
+            ketnoi();
+            string sql = "select * from dbo.USERS where USERNAME='" + user +"'";
+            sqlcom = new SqlCommand(sql, sqlconn);
+            sqldatar = sqlcom.ExecuteReader(); //select ExecuteReader();  insert/delete ExecuteNonQuery
+            if (sqldatar.Read() == true)
+            {
+                UserInfo.ID = user;
+                UserInfo.HoTen = sqldatar["USERNAME"].ToString();
+                UserInfo.Quyen = sqldatar["QUYEN"].ToString();
+                ngatketnoi();
+            }
+            else ngatketnoi();
+        }
     }
 }

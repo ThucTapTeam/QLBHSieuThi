@@ -56,13 +56,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ChiTietHoaDon.cs" />
     <Compile Include="Connection.cs" />
-    <Compile Include="Form1.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
-    </Compile>
     <Compile Include="Layout\FormDoanhThu.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -93,17 +88,23 @@
     <Compile Include="Layout\FormKhuyenMai.Designer.cs">
       <DependentUpon>FormKhuyenMai.cs</DependentUpon>
     </Compile>
-    <Compile Include="Layout\FormNhapKho.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Layout\FormNhapKho.Designer.cs">
-      <DependentUpon>FormNhapKho.cs</DependentUpon>
-    </Compile>
     <Compile Include="Layout\FormTongQuan.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Layout\FormTongQuan.Designer.cs">
       <DependentUpon>FormTongQuan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Layout\FormUsers.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Layout\FormUsers.Designer.cs">
+      <DependentUpon>FormUsers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Layout\sub-formDonHang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Layout\sub-formDonHang.Designer.cs">
+      <DependentUpon>sub-formDonHang.cs</DependentUpon>
     </Compile>
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
@@ -119,29 +120,32 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include=".Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="QLBHSieuThiDataSet_HANGHOA.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>QLBHSieuThiDataSet_HANGHOA.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="QLBHSieuThiDataSet_KHACHHANG.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>QLBHSieuThiDataSet_KHACHHANG.xsd</DependentUpon>
-    </Compile>
     <Compile Include="SieuThiDataSet_DONHANG.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>SieuThiDataSet_DONHANG.xsd</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
-    </EmbeddedResource>
+    <Compile Include="SieuThiDataSet_HangHoa.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SieuThiDataSet_HangHoa.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="SieuThiDataSet_KhachHang.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SieuThiDataSet_KhachHang.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="SieuThiDataSet_KM.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SieuThiDataSet_KM.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="SieuThiDataSet_USERS.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SieuThiDataSet_USERS.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="UserInfo.cs" />
     <EmbeddedResource Include="Layout\FormDoanhThu.resx">
       <DependentUpon>FormDoanhThu.cs</DependentUpon>
     </EmbeddedResource>
@@ -154,11 +158,17 @@
     <EmbeddedResource Include="Layout\FormKhachHang.resx">
       <DependentUpon>FormKhachHang.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Layout\FormNhapKho.resx">
-      <DependentUpon>FormNhapKho.cs</DependentUpon>
+    <EmbeddedResource Include="Layout\FormKhuyenMai.resx">
+      <DependentUpon>FormKhuyenMai.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Layout\FormTongQuan.resx">
       <DependentUpon>FormTongQuan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Layout\FormUsers.resx">
+      <DependentUpon>FormUsers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Layout\sub-formDonHang.resx">
+      <DependentUpon>sub-formDonHang.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
@@ -184,39 +194,6 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <None Include=".xsc">
-      <DependentUpon>.xsd</DependentUpon>
-    </None>
-    <None Include=".xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include=".xss">
-      <DependentUpon>.xsd</DependentUpon>
-    </None>
-    <None Include="QLBHSieuThiDataSet_HANGHOA.xsc">
-      <DependentUpon>QLBHSieuThiDataSet_HANGHOA.xsd</DependentUpon>
-    </None>
-    <None Include="QLBHSieuThiDataSet_HANGHOA.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>QLBHSieuThiDataSet_HANGHOA.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="QLBHSieuThiDataSet_HANGHOA.xss">
-      <DependentUpon>QLBHSieuThiDataSet_HANGHOA.xsd</DependentUpon>
-    </None>
-    <None Include="QLBHSieuThiDataSet_KHACHHANG.xsc">
-      <DependentUpon>QLBHSieuThiDataSet_KHACHHANG.xsd</DependentUpon>
-    </None>
-    <None Include="QLBHSieuThiDataSet_KHACHHANG.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>QLBHSieuThiDataSet_KHACHHANG.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="QLBHSieuThiDataSet_KHACHHANG.xss">
-      <DependentUpon>QLBHSieuThiDataSet_KHACHHANG.xsd</DependentUpon>
-    </None>
     <None Include="SieuThiDataSet_DONHANG.xsc">
       <DependentUpon>SieuThiDataSet_DONHANG.xsd</DependentUpon>
     </None>
@@ -227,6 +204,50 @@
     </None>
     <None Include="SieuThiDataSet_DONHANG.xss">
       <DependentUpon>SieuThiDataSet_DONHANG.xsd</DependentUpon>
+    </None>
+    <None Include="SieuThiDataSet_HangHoa.xsc">
+      <DependentUpon>SieuThiDataSet_HangHoa.xsd</DependentUpon>
+    </None>
+    <None Include="SieuThiDataSet_HangHoa.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>SieuThiDataSet_HangHoa.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="SieuThiDataSet_HangHoa.xss">
+      <DependentUpon>SieuThiDataSet_HangHoa.xsd</DependentUpon>
+    </None>
+    <None Include="SieuThiDataSet_KhachHang.xsc">
+      <DependentUpon>SieuThiDataSet_KhachHang.xsd</DependentUpon>
+    </None>
+    <None Include="SieuThiDataSet_KhachHang.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>SieuThiDataSet_KhachHang.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="SieuThiDataSet_KhachHang.xss">
+      <DependentUpon>SieuThiDataSet_KhachHang.xsd</DependentUpon>
+    </None>
+    <None Include="SieuThiDataSet_KM.xsc">
+      <DependentUpon>SieuThiDataSet_KM.xsd</DependentUpon>
+    </None>
+    <None Include="SieuThiDataSet_KM.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>SieuThiDataSet_KM.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="SieuThiDataSet_KM.xss">
+      <DependentUpon>SieuThiDataSet_KM.xsd</DependentUpon>
+    </None>
+    <None Include="SieuThiDataSet_USERS.xsc">
+      <DependentUpon>SieuThiDataSet_USERS.xsd</DependentUpon>
+    </None>
+    <None Include="SieuThiDataSet_USERS.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>SieuThiDataSet_USERS.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="SieuThiDataSet_USERS.xss">
+      <DependentUpon>SieuThiDataSet_USERS.xsd</DependentUpon>
     </None>
   </ItemGroup>
   <ItemGroup>

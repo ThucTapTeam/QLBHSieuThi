@@ -12,7 +12,7 @@
               <DbSource ConnectionRef="SieuThiConnectionString (Settings)" DbObjectName="SieuThi.dbo.VIEW_DONHANG" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>SELECT MADONHANG, TENSANPHAM, USERNAME, TENDONHANG, MAKHUYENMAI, XACNHAN, NGAYDAT, NGAYGIAOHANG FROM dbo.VIEW_DONHANG</CommandText>
+                    <CommandText>SELECT MADONHANG, HOTEN, MASANPHAM, TENSANPHAM, SOLUONG, GIABANRA, MAKHUYENMAI, NGAYDAT, NGAYGIAOHANG, NHANVIENGIAODICH FROM dbo.VIEW_DONHANG</CommandText>
                     <Parameters />
                   </DbCommand>
                 </SelectCommand>
@@ -20,13 +20,15 @@
             </MainSource>
             <Mappings>
               <Mapping SourceColumn="MADONHANG" DataSetColumn="MADONHANG" />
+              <Mapping SourceColumn="HOTEN" DataSetColumn="HOTEN" />
+              <Mapping SourceColumn="MASANPHAM" DataSetColumn="MASANPHAM" />
               <Mapping SourceColumn="TENSANPHAM" DataSetColumn="TENSANPHAM" />
-              <Mapping SourceColumn="USERNAME" DataSetColumn="USERNAME" />
-              <Mapping SourceColumn="TENDONHANG" DataSetColumn="TENDONHANG" />
+              <Mapping SourceColumn="SOLUONG" DataSetColumn="SOLUONG" />
+              <Mapping SourceColumn="GIABANRA" DataSetColumn="GIABANRA" />
               <Mapping SourceColumn="MAKHUYENMAI" DataSetColumn="MAKHUYENMAI" />
-              <Mapping SourceColumn="XACNHAN" DataSetColumn="XACNHAN" />
               <Mapping SourceColumn="NGAYDAT" DataSetColumn="NGAYDAT" />
               <Mapping SourceColumn="NGAYGIAOHANG" DataSetColumn="NGAYGIAOHANG" />
+              <Mapping SourceColumn="NHANVIENGIAODICH" DataSetColumn="NHANVIENGIAODICH" />
             </Mappings>
             <Sources />
           </TableAdapter>
@@ -48,6 +50,20 @@
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
+              <xs:element name="HOTEN" msprop:Generator_ColumnVarNameInTable="columnHOTEN" msprop:Generator_ColumnPropNameInRow="HOTEN" msprop:Generator_ColumnPropNameInTable="HOTENColumn" msprop:Generator_UserColumnName="HOTEN" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="MASANPHAM" msprop:Generator_ColumnVarNameInTable="columnMASANPHAM" msprop:Generator_ColumnPropNameInRow="MASANPHAM" msprop:Generator_ColumnPropNameInTable="MASANPHAMColumn" msprop:Generator_UserColumnName="MASANPHAM">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="8" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
               <xs:element name="TENSANPHAM" msprop:Generator_ColumnVarNameInTable="columnTENSANPHAM" msprop:Generator_ColumnPropNameInRow="TENSANPHAM" msprop:Generator_ColumnPropNameInTable="TENSANPHAMColumn" msprop:Generator_UserColumnName="TENSANPHAM" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
@@ -55,20 +71,8 @@
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="USERNAME" msprop:Generator_ColumnVarNameInTable="columnUSERNAME" msprop:Generator_ColumnPropNameInRow="USERNAME" msprop:Generator_ColumnPropNameInTable="USERNAMEColumn" msprop:Generator_UserColumnName="USERNAME" minOccurs="0">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="40" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="TENDONHANG" msprop:Generator_ColumnVarNameInTable="columnTENDONHANG" msprop:Generator_ColumnPropNameInRow="TENDONHANG" msprop:Generator_ColumnPropNameInTable="TENDONHANGColumn" msprop:Generator_UserColumnName="TENDONHANG" minOccurs="0">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="30" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
+              <xs:element name="SOLUONG" msprop:Generator_ColumnVarNameInTable="columnSOLUONG" msprop:Generator_ColumnPropNameInRow="SOLUONG" msprop:Generator_ColumnPropNameInTable="SOLUONGColumn" msprop:Generator_UserColumnName="SOLUONG" type="xs:int" minOccurs="0" />
+              <xs:element name="GIABANRA" msprop:Generator_ColumnVarNameInTable="columnGIABANRA" msprop:Generator_ColumnPropNameInRow="GIABANRA" msprop:Generator_ColumnPropNameInTable="GIABANRAColumn" msprop:Generator_UserColumnName="GIABANRA" type="xs:int" minOccurs="0" />
               <xs:element name="MAKHUYENMAI" msprop:Generator_ColumnVarNameInTable="columnMAKHUYENMAI" msprop:Generator_ColumnPropNameInRow="MAKHUYENMAI" msprop:Generator_ColumnPropNameInTable="MAKHUYENMAIColumn" msprop:Generator_UserColumnName="MAKHUYENMAI" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
@@ -76,9 +80,15 @@
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="XACNHAN" msprop:Generator_ColumnVarNameInTable="columnXACNHAN" msprop:Generator_ColumnPropNameInRow="XACNHAN" msprop:Generator_ColumnPropNameInTable="XACNHANColumn" msprop:Generator_UserColumnName="XACNHAN" type="xs:int" minOccurs="0" />
               <xs:element name="NGAYDAT" msprop:Generator_ColumnVarNameInTable="columnNGAYDAT" msprop:Generator_ColumnPropNameInRow="NGAYDAT" msprop:Generator_ColumnPropNameInTable="NGAYDATColumn" msprop:Generator_UserColumnName="NGAYDAT" type="xs:dateTime" minOccurs="0" />
               <xs:element name="NGAYGIAOHANG" msprop:Generator_ColumnVarNameInTable="columnNGAYGIAOHANG" msprop:Generator_ColumnPropNameInRow="NGAYGIAOHANG" msprop:Generator_ColumnPropNameInTable="NGAYGIAOHANGColumn" msprop:Generator_UserColumnName="NGAYGIAOHANG" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="NHANVIENGIAODICH" msprop:Generator_ColumnVarNameInTable="columnNHANVIENGIAODICH" msprop:Generator_ColumnPropNameInRow="NHANVIENGIAODICH" msprop:Generator_ColumnPropNameInTable="NHANVIENGIAODICHColumn" msprop:Generator_UserColumnName="NHANVIENGIAODICH" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="40" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
