@@ -57,6 +57,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ChiTietHoaDon.cs" />
+    <Compile Include="ChuanHoa.cs" />
     <Compile Include="Connection.cs" />
     <Compile Include="Layout\FormDoanhThu.cs">
       <SubType>UserControl</SubType>

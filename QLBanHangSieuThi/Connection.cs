@@ -53,6 +53,10 @@ namespace QLBanHangSieuThi
                 temp = sqldatar[cot].ToString();
 
             }
+            if (temp == "")
+            {
+                temp = "0";
+            }
             ngatketnoi();
             return temp;
         }
