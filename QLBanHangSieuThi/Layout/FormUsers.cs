@@ -19,7 +19,7 @@ namespace QLBanHangSieuThi.Layout
         }
 
         bool UpdateModeOn = false;
-        SqlConnection con = new SqlConnection(@"Data Source=.\SQLEXPRESS;Initial Catalog=SieuThi;Integrated Security=True");
+        SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-SSCJKUR;Initial Catalog=SieuThi;Integrated Security=True");
         SqlDataAdapter adapt;
         SqlCommand cmdKG;
 

@@ -11,7 +11,7 @@ namespace QLBanHangSieuThi
 {
     class Connection
     {
-        string conn= @"Data Source=.\SQLEXPRESS;Initial Catalog=SieuThi;Integrated Security=True";
+        string conn= @"Data Source=DESKTOP-SSCJKUR;Initial Catalog=SieuThi;Integrated Security=True";
         SqlConnection sqlconn;
         SqlCommand sqlcom;
         SqlDataReader sqldatar;
@@ -42,7 +42,7 @@ namespace QLBanHangSieuThi
             return ok;
             
         }
-        public string tongquan(string strsql, byte cot)
+        public string LayBien(string strsql, byte cot)
         {
             string temp = null;
             ketnoi();
@@ -55,6 +55,22 @@ namespace QLBanHangSieuThi
             }
             ngatketnoi();
             return temp;
+        }
+        public bool LayBien1(string data, string strsql, byte cot)
+        {
+            bool ok = false;
+            ketnoi();
+            sqlcom = new SqlCommand(strsql, sqlconn);
+            sqldatar = sqlcom.ExecuteReader();
+            while (sqldatar.Read())
+            {
+                if (data == sqldatar[cot].ToString())
+                {
+                    ok = true;
+                }
+            }
+            ngatketnoi();
+            return ok;
         }
 
         public bool tongquan1(string data,string strsql, byte cot)

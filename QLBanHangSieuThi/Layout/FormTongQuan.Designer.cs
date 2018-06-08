@@ -78,7 +78,7 @@
             this.bunifuElipse3 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.panel10 = new System.Windows.Forms.Panel();
             this.panel11 = new System.Windows.Forms.Panel();
-            this.label39 = new System.Windows.Forms.Label();
+            this.sohangvuot = new System.Windows.Forms.Label();
             this.sohangsaphet = new System.Windows.Forms.Label();
             this.hangtrongkho = new System.Windows.Forms.Label();
             this.hangtonkholau = new System.Windows.Forms.Label();
@@ -93,10 +93,8 @@
             this.label16 = new System.Windows.Forms.Label();
             this.panel13 = new System.Windows.Forms.Panel();
             this.panel14 = new System.Windows.Forms.Panel();
-            this.hangbiloi = new System.Windows.Forms.Label();
-            this.label41 = new System.Windows.Forms.Label();
-            this.label40 = new System.Windows.Forms.Label();
-            this.label32 = new System.Windows.Forms.Label();
+            this.nhapgiaban = new System.Windows.Forms.Label();
+            this.nhapgiamua = new System.Windows.Forms.Label();
             this.label31 = new System.Windows.Forms.Label();
             this.label30 = new System.Windows.Forms.Label();
             this.panel15 = new System.Windows.Forms.Panel();
@@ -635,7 +633,7 @@
             // panel11
             // 
             this.panel11.BackColor = System.Drawing.Color.White;
-            this.panel11.Controls.Add(this.label39);
+            this.panel11.Controls.Add(this.sohangvuot);
             this.panel11.Controls.Add(this.sohangsaphet);
             this.panel11.Controls.Add(this.hangtrongkho);
             this.panel11.Controls.Add(this.hangtonkholau);
@@ -650,15 +648,15 @@
             this.panel11.Size = new System.Drawing.Size(316, 211);
             this.panel11.TabIndex = 1;
             // 
-            // label39
+            // sohangvuot
             // 
-            this.label39.Font = new System.Drawing.Font("Quicksand", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label39.Location = new System.Drawing.Point(176, 140);
-            this.label39.Name = "label39";
-            this.label39.Size = new System.Drawing.Size(99, 24);
-            this.label39.TabIndex = 21;
-            this.label39.Text = "0";
-            this.label39.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.sohangvuot.Font = new System.Drawing.Font("Quicksand", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.sohangvuot.Location = new System.Drawing.Point(176, 140);
+            this.sohangvuot.Name = "sohangvuot";
+            this.sohangvuot.Size = new System.Drawing.Size(99, 24);
+            this.sohangvuot.TabIndex = 21;
+            this.sohangvuot.Text = "0";
+            this.sohangvuot.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // sohangsaphet
             // 
@@ -796,10 +794,8 @@
             // panel14
             // 
             this.panel14.BackColor = System.Drawing.Color.White;
-            this.panel14.Controls.Add(this.hangbiloi);
-            this.panel14.Controls.Add(this.label41);
-            this.panel14.Controls.Add(this.label40);
-            this.panel14.Controls.Add(this.label32);
+            this.panel14.Controls.Add(this.nhapgiaban);
+            this.panel14.Controls.Add(this.nhapgiamua);
             this.panel14.Controls.Add(this.label31);
             this.panel14.Controls.Add(this.label30);
             this.panel14.Location = new System.Drawing.Point(3, 59);
@@ -807,45 +803,25 @@
             this.panel14.Size = new System.Drawing.Size(316, 211);
             this.panel14.TabIndex = 1;
             // 
-            // hangbiloi
+            // nhapgiaban
             // 
-            this.hangbiloi.Font = new System.Drawing.Font("Quicksand", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.hangbiloi.Location = new System.Drawing.Point(169, 80);
-            this.hangbiloi.Name = "hangbiloi";
-            this.hangbiloi.Size = new System.Drawing.Size(99, 24);
-            this.hangbiloi.TabIndex = 23;
-            this.hangbiloi.Text = "0";
-            this.hangbiloi.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.nhapgiaban.Font = new System.Drawing.Font("Quicksand", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nhapgiaban.Location = new System.Drawing.Point(169, 50);
+            this.nhapgiaban.Name = "nhapgiaban";
+            this.nhapgiaban.Size = new System.Drawing.Size(99, 24);
+            this.nhapgiaban.TabIndex = 22;
+            this.nhapgiaban.Text = "0";
+            this.nhapgiaban.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // label41
+            // nhapgiamua
             // 
-            this.label41.Font = new System.Drawing.Font("Quicksand", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label41.Location = new System.Drawing.Point(169, 50);
-            this.label41.Name = "label41";
-            this.label41.Size = new System.Drawing.Size(99, 24);
-            this.label41.TabIndex = 22;
-            this.label41.Text = "0";
-            this.label41.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // label40
-            // 
-            this.label40.Font = new System.Drawing.Font("Quicksand", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label40.Location = new System.Drawing.Point(169, 20);
-            this.label40.Name = "label40";
-            this.label40.Size = new System.Drawing.Size(99, 24);
-            this.label40.TabIndex = 21;
-            this.label40.Text = "0";
-            this.label40.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // label32
-            // 
-            this.label32.AutoSize = true;
-            this.label32.Font = new System.Drawing.Font("Quicksand", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label32.Location = new System.Drawing.Point(17, 85);
-            this.label32.Name = "label32";
-            this.label32.Size = new System.Drawing.Size(82, 18);
-            this.label32.TabIndex = 12;
-            this.label32.Text = "Số hàng bị lỗi";
+            this.nhapgiamua.Font = new System.Drawing.Font("Quicksand", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nhapgiamua.Location = new System.Drawing.Point(169, 20);
+            this.nhapgiamua.Name = "nhapgiamua";
+            this.nhapgiamua.Size = new System.Drawing.Size(99, 24);
+            this.nhapgiamua.TabIndex = 21;
+            this.nhapgiamua.Text = "0";
+            this.nhapgiamua.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // label31
             // 
@@ -1112,7 +1088,6 @@
         private System.Windows.Forms.Label label25;
         private System.Windows.Forms.Label label29;
         private System.Windows.Forms.Label label28;
-        private System.Windows.Forms.Label label32;
         private System.Windows.Forms.Label label31;
         private System.Windows.Forms.Label label30;
         private System.Windows.Forms.Label label37;
@@ -1129,13 +1104,12 @@
         private System.Windows.Forms.Label sodonhang1;
         private System.Windows.Forms.Label tientrungbinh;
         private System.Windows.Forms.Label tongtienlai1;
-        private System.Windows.Forms.Label label39;
+        private System.Windows.Forms.Label sohangvuot;
         private System.Windows.Forms.Label sohangsaphet;
         private System.Windows.Forms.Label hangtrongkho;
         private System.Windows.Forms.Label hangtonkholau;
         private System.Windows.Forms.Label hangdanghet;
-        private System.Windows.Forms.Label hangbiloi;
-        private System.Windows.Forms.Label label41;
-        private System.Windows.Forms.Label label40;
+        private System.Windows.Forms.Label nhapgiaban;
+        private System.Windows.Forms.Label nhapgiamua;
     }
 }
