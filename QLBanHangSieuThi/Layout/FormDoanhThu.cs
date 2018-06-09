@@ -21,6 +21,7 @@ namespace QLBanHangSieuThi.Layout
             TongDoanhThu();
             LoiNhuan();
             HangBanRa();
+            HangTrongKho();
         }
         string day, month, year;
         string day1, month1, year1;
@@ -153,6 +154,53 @@ namespace QLBanHangSieuThi.Layout
             {
                 lbtghangban.Text = "Không đổi";
                 CPhangban.Value = 0;
+            }
+        }
+        public void HangTrongKho()
+        {
+            int hangkhothangnay = 0;
+            int hangkhothangtrc = 0;
+            ch.ChuanHoaDate(DateTime.Now.ToString(), out day, out month, out year);
+            if (month == "1")
+            {
+                month1 = "12";
+                year1 = (Convert.ToInt32(year) - 1).ToString();
+            }
+            else
+            {
+                month1 = (Convert.ToInt32(month) - 1).ToString();
+            }
+            hangkhothangnay = Convert.ToInt32(conn.LayBien("PROC_LUONGHANG '" + month + "','" + year + "'", 0));
+            hangkhothangtrc = Convert.ToInt32(conn.LayBien("PROC_LUONGHANG '" + month1 + "','" + year1 + "'", 0));
+            if (hangkhothangnay > hangkhothangtrc)
+            {
+                lbkhotg.Text = "Tăng";
+                if (hangkhothangtrc != 0)
+                {
+                    CPhangkho.Value = (hangkhothangtrc * 100 / hangkhothangnay);
+                }
+                else
+                {
+                    CPhangkho.Value = 100;
+                }
+
+            }
+            else if (hangkhothangnay < hangkhothangtrc)
+            {
+                lbkhotg.Text = "Giảm";
+                if (hangkhothangnay != 0)
+                {
+                    CPhangkho.Value = (hangkhothangnay * 100 / hangkhothangtrc);
+                }
+                else
+                {
+                    CPhangkho.Value = 100;
+                }
+            }
+            else
+            {
+                lbkhotg.Text = "Không đổi";
+                CPhangkho.Value = 0;
             }
         }
     }

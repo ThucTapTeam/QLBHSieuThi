@@ -32,27 +32,24 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormDoanhThu));
             this.panel1 = new System.Windows.Forms.Panel();
             this.bunifuGradientPanel3 = new Bunifu.Framework.UI.BunifuGradientPanel();
+            this.lbsohang = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.bunifuGradientPanel2 = new Bunifu.Framework.UI.BunifuGradientPanel();
+            this.lbtienlai = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.bunifuGradientPanel1 = new Bunifu.Framework.UI.BunifuGradientPanel();
+            this.lbtongtien = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.label22 = new System.Windows.Forms.Label();
-            this.label21 = new System.Windows.Forms.Label();
-            this.bunifuProgressBar2 = new Bunifu.Framework.UI.BunifuProgressBar();
-            this.label19 = new System.Windows.Forms.Label();
-            this.label20 = new System.Windows.Forms.Label();
-            this.bunifuProgressBar1 = new Bunifu.Framework.UI.BunifuProgressBar();
-            this.label18 = new System.Windows.Forms.Label();
-            this.label17 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.lbtghangban = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
             this.CPhangban = new Bunifu.Framework.UI.BunifuCircleProgressbar();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.lbtgloinhuan = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.CPloinhuan = new Bunifu.Framework.UI.BunifuCircleProgressbar();
             this.label12 = new System.Windows.Forms.Label();
@@ -61,11 +58,11 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
-            this.lbtongtien = new System.Windows.Forms.Label();
-            this.lbtienlai = new System.Windows.Forms.Label();
-            this.lbsohang = new System.Windows.Forms.Label();
-            this.lbtgloinhuan = new System.Windows.Forms.Label();
-            this.lbtghangban = new System.Windows.Forms.Label();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.lbkhotg = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.CPhangkho = new Bunifu.Framework.UI.BunifuCircleProgressbar();
+            this.label11 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.bunifuGradientPanel3.SuspendLayout();
             this.bunifuGradientPanel2.SuspendLayout();
@@ -73,6 +70,7 @@
             this.panel2.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel4.SuspendLayout();
+            this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -102,6 +100,18 @@
             this.bunifuGradientPanel3.Quality = 10;
             this.bunifuGradientPanel3.Size = new System.Drawing.Size(237, 101);
             this.bunifuGradientPanel3.TabIndex = 1;
+            // 
+            // lbsohang
+            // 
+            this.lbsohang.BackColor = System.Drawing.Color.Transparent;
+            this.lbsohang.Font = new System.Drawing.Font("Quicksand Medium", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbsohang.ForeColor = System.Drawing.Color.White;
+            this.lbsohang.Location = new System.Drawing.Point(29, 58);
+            this.lbsohang.Name = "lbsohang";
+            this.lbsohang.Size = new System.Drawing.Size(175, 30);
+            this.lbsohang.TabIndex = 18;
+            this.lbsohang.Text = "0";
+            this.lbsohang.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // label8
             // 
@@ -144,6 +154,18 @@
             this.bunifuGradientPanel2.Size = new System.Drawing.Size(237, 101);
             this.bunifuGradientPanel2.TabIndex = 1;
             // 
+            // lbtienlai
+            // 
+            this.lbtienlai.BackColor = System.Drawing.Color.Transparent;
+            this.lbtienlai.Font = new System.Drawing.Font("Quicksand Medium", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbtienlai.ForeColor = System.Drawing.Color.White;
+            this.lbtienlai.Location = new System.Drawing.Point(29, 58);
+            this.lbtienlai.Name = "lbtienlai";
+            this.lbtienlai.Size = new System.Drawing.Size(175, 30);
+            this.lbtienlai.TabIndex = 17;
+            this.lbtienlai.Text = "0";
+            this.lbtienlai.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
             // label7
             // 
             this.label7.AutoSize = true;
@@ -185,6 +207,18 @@
             this.bunifuGradientPanel1.Size = new System.Drawing.Size(237, 101);
             this.bunifuGradientPanel1.TabIndex = 0;
             // 
+            // lbtongtien
+            // 
+            this.lbtongtien.BackColor = System.Drawing.Color.Transparent;
+            this.lbtongtien.Font = new System.Drawing.Font("Quicksand Medium", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbtongtien.ForeColor = System.Drawing.Color.White;
+            this.lbtongtien.Location = new System.Drawing.Point(31, 58);
+            this.lbtongtien.Name = "lbtongtien";
+            this.lbtongtien.Size = new System.Drawing.Size(175, 30);
+            this.lbtongtien.TabIndex = 16;
+            this.lbtongtien.Text = "0";
+            this.lbtongtien.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
             // label6
             // 
             this.label6.AutoSize = true;
@@ -212,14 +246,7 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.White;
-            this.panel2.Controls.Add(this.label22);
-            this.panel2.Controls.Add(this.label21);
-            this.panel2.Controls.Add(this.bunifuProgressBar2);
-            this.panel2.Controls.Add(this.label19);
-            this.panel2.Controls.Add(this.label20);
-            this.panel2.Controls.Add(this.bunifuProgressBar1);
-            this.panel2.Controls.Add(this.label18);
-            this.panel2.Controls.Add(this.label17);
+            this.panel2.Controls.Add(this.panel3);
             this.panel2.Controls.Add(this.panel5);
             this.panel2.Controls.Add(this.panel4);
             this.panel2.Controls.Add(this.label12);
@@ -227,96 +254,6 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(711, 377);
             this.panel2.TabIndex = 7;
-            // 
-            // label22
-            // 
-            this.label22.AutoSize = true;
-            this.label22.Font = new System.Drawing.Font("Quicksand", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label22.ForeColor = System.Drawing.Color.Black;
-            this.label22.Location = new System.Drawing.Point(412, 278);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(52, 26);
-            this.label22.TabIndex = 27;
-            this.label22.Text = "20 %";
-            // 
-            // label21
-            // 
-            this.label21.AutoSize = true;
-            this.label21.Font = new System.Drawing.Font("Quicksand", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label21.ForeColor = System.Drawing.Color.Black;
-            this.label21.Location = new System.Drawing.Point(413, 221);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(51, 26);
-            this.label21.TabIndex = 26;
-            this.label21.Text = "30 %";
-            // 
-            // bunifuProgressBar2
-            // 
-            this.bunifuProgressBar2.BackColor = System.Drawing.Color.Silver;
-            this.bunifuProgressBar2.BorderRadius = 10;
-            this.bunifuProgressBar2.Location = new System.Drawing.Point(237, 307);
-            this.bunifuProgressBar2.MaximumValue = 100;
-            this.bunifuProgressBar2.Name = "bunifuProgressBar2";
-            this.bunifuProgressBar2.ProgressColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(47)))), ((int)(((byte)(6)))));
-            this.bunifuProgressBar2.Size = new System.Drawing.Size(420, 13);
-            this.bunifuProgressBar2.TabIndex = 25;
-            this.bunifuProgressBar2.Value = 20;
-            // 
-            // label19
-            // 
-            this.label19.AutoSize = true;
-            this.label19.Font = new System.Drawing.Font("Quicksand Medium", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label19.ForeColor = System.Drawing.Color.DarkRed;
-            this.label19.Location = new System.Drawing.Point(169, 299);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(52, 26);
-            this.label19.TabIndex = 24;
-            this.label19.Text = "tăng";
-            // 
-            // label20
-            // 
-            this.label20.AutoSize = true;
-            this.label20.Font = new System.Drawing.Font("Quicksand", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label20.ForeColor = System.Drawing.Color.Black;
-            this.label20.Location = new System.Drawing.Point(52, 299);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(104, 26);
-            this.label20.TabIndex = 23;
-            this.label20.Text = "Số hàng lỗi";
-            // 
-            // bunifuProgressBar1
-            // 
-            this.bunifuProgressBar1.BackColor = System.Drawing.Color.Silver;
-            this.bunifuProgressBar1.BorderRadius = 10;
-            this.bunifuProgressBar1.Location = new System.Drawing.Point(237, 250);
-            this.bunifuProgressBar1.MaximumValue = 100;
-            this.bunifuProgressBar1.Name = "bunifuProgressBar1";
-            this.bunifuProgressBar1.ProgressColor = System.Drawing.Color.FromArgb(((int)(((byte)(108)))), ((int)(((byte)(92)))), ((int)(((byte)(231)))));
-            this.bunifuProgressBar1.Size = new System.Drawing.Size(420, 13);
-            this.bunifuProgressBar1.TabIndex = 22;
-            this.bunifuProgressBar1.Value = 30;
-            // 
-            // label18
-            // 
-            this.label18.AutoSize = true;
-            this.label18.Font = new System.Drawing.Font("Quicksand Medium", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label18.ForeColor = System.Drawing.Color.DarkRed;
-            this.label18.Location = new System.Drawing.Point(169, 242);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(52, 26);
-            this.label18.TabIndex = 21;
-            this.label18.Text = "tăng";
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.Font = new System.Drawing.Font("Quicksand", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label17.ForeColor = System.Drawing.Color.Black;
-            this.label17.Location = new System.Drawing.Point(52, 242);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(124, 26);
-            this.label17.TabIndex = 20;
-            this.label17.Text = "Lượng khách ";
             // 
             // panel5
             // 
@@ -328,6 +265,17 @@
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(278, 129);
             this.panel5.TabIndex = 17;
+            // 
+            // lbtghangban
+            // 
+            this.lbtghangban.Font = new System.Drawing.Font("Quicksand Medium", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbtghangban.ForeColor = System.Drawing.Color.DarkRed;
+            this.lbtghangban.Location = new System.Drawing.Point(27, 83);
+            this.lbtghangban.Name = "lbtghangban";
+            this.lbtghangban.Size = new System.Drawing.Size(124, 30);
+            this.lbtghangban.TabIndex = 29;
+            this.lbtghangban.Text = "Tăng";
+            this.lbtghangban.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label16
             // 
@@ -373,6 +321,17 @@
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(278, 129);
             this.panel4.TabIndex = 14;
+            // 
+            // lbtgloinhuan
+            // 
+            this.lbtgloinhuan.Font = new System.Drawing.Font("Quicksand Medium", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbtgloinhuan.ForeColor = System.Drawing.Color.DarkRed;
+            this.lbtgloinhuan.Location = new System.Drawing.Point(27, 83);
+            this.lbtgloinhuan.Name = "lbtgloinhuan";
+            this.lbtgloinhuan.Size = new System.Drawing.Size(124, 30);
+            this.lbtgloinhuan.TabIndex = 28;
+            this.lbtgloinhuan.Text = "Tăng";
+            this.lbtgloinhuan.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label13
             // 
@@ -471,63 +430,72 @@
             this.bunifuElipse1.ElipseRadius = 10;
             this.bunifuElipse1.TargetControl = this.DPDoanhThu;
             // 
-            // lbtongtien
+            // panel3
             // 
-            this.lbtongtien.BackColor = System.Drawing.Color.Transparent;
-            this.lbtongtien.Font = new System.Drawing.Font("Quicksand Medium", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbtongtien.ForeColor = System.Drawing.Color.White;
-            this.lbtongtien.Location = new System.Drawing.Point(31, 58);
-            this.lbtongtien.Name = "lbtongtien";
-            this.lbtongtien.Size = new System.Drawing.Size(175, 30);
-            this.lbtongtien.TabIndex = 16;
-            this.lbtongtien.Text = "0";
-            this.lbtongtien.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(129)))), ((int)(((byte)(236)))), ((int)(((byte)(236)))));
+            this.panel3.Controls.Add(this.label11);
+            this.panel3.Controls.Add(this.lbkhotg);
+            this.panel3.Controls.Add(this.label10);
+            this.panel3.Controls.Add(this.CPhangkho);
+            this.panel3.Location = new System.Drawing.Point(208, 208);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(278, 129);
+            this.panel3.TabIndex = 29;
             // 
-            // lbtienlai
+            // lbkhotg
             // 
-            this.lbtienlai.BackColor = System.Drawing.Color.Transparent;
-            this.lbtienlai.Font = new System.Drawing.Font("Quicksand Medium", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbtienlai.ForeColor = System.Drawing.Color.White;
-            this.lbtienlai.Location = new System.Drawing.Point(29, 58);
-            this.lbtienlai.Name = "lbtienlai";
-            this.lbtienlai.Size = new System.Drawing.Size(175, 30);
-            this.lbtienlai.TabIndex = 17;
-            this.lbtienlai.Text = "0";
-            this.lbtienlai.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lbkhotg.Font = new System.Drawing.Font("Quicksand Medium", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbkhotg.ForeColor = System.Drawing.Color.DarkRed;
+            this.lbkhotg.Location = new System.Drawing.Point(27, 83);
+            this.lbkhotg.Name = "lbkhotg";
+            this.lbkhotg.Size = new System.Drawing.Size(124, 30);
+            this.lbkhotg.TabIndex = 28;
+            this.lbkhotg.Text = "Tăng";
+            this.lbkhotg.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // lbsohang
+            // label10
             // 
-            this.lbsohang.BackColor = System.Drawing.Color.Transparent;
-            this.lbsohang.Font = new System.Drawing.Font("Quicksand Medium", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbsohang.ForeColor = System.Drawing.Color.White;
-            this.lbsohang.Location = new System.Drawing.Point(29, 58);
-            this.lbsohang.Name = "lbsohang";
-            this.lbsohang.Size = new System.Drawing.Size(175, 30);
-            this.lbsohang.TabIndex = 18;
-            this.lbsohang.Text = "0";
-            this.lbsohang.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Quicksand", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.ForeColor = System.Drawing.Color.Black;
+            this.label10.Location = new System.Drawing.Point(41, 15);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(111, 26);
+            this.label10.TabIndex = 15;
+            this.label10.Text = "Lượng hàng";
             // 
-            // lbtgloinhuan
+            // CPhangkho
             // 
-            this.lbtgloinhuan.Font = new System.Drawing.Font("Quicksand Medium", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbtgloinhuan.ForeColor = System.Drawing.Color.DarkRed;
-            this.lbtgloinhuan.Location = new System.Drawing.Point(27, 83);
-            this.lbtgloinhuan.Name = "lbtgloinhuan";
-            this.lbtgloinhuan.Size = new System.Drawing.Size(124, 30);
-            this.lbtgloinhuan.TabIndex = 28;
-            this.lbtgloinhuan.Text = "Tăng";
-            this.lbtgloinhuan.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.CPhangkho.animated = false;
+            this.CPhangkho.animationIterval = 5;
+            this.CPhangkho.animationSpeed = 300;
+            this.CPhangkho.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(129)))), ((int)(((byte)(236)))), ((int)(((byte)(236)))));
+            this.CPhangkho.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("CPhangkho.BackgroundImage")));
+            this.CPhangkho.Font = new System.Drawing.Font("Quicksand", 20F);
+            this.CPhangkho.ForeColor = System.Drawing.Color.Black;
+            this.CPhangkho.LabelVisible = true;
+            this.CPhangkho.LineProgressThickness = 5;
+            this.CPhangkho.LineThickness = 5;
+            this.CPhangkho.Location = new System.Drawing.Point(164, 12);
+            this.CPhangkho.Margin = new System.Windows.Forms.Padding(10, 12, 10, 12);
+            this.CPhangkho.MaxValue = 100;
+            this.CPhangkho.Name = "CPhangkho";
+            this.CPhangkho.ProgressBackColor = System.Drawing.Color.White;
+            this.CPhangkho.ProgressColor = System.Drawing.Color.FromArgb(((int)(((byte)(108)))), ((int)(((byte)(92)))), ((int)(((byte)(231)))));
+            this.CPhangkho.Size = new System.Drawing.Size(104, 104);
+            this.CPhangkho.TabIndex = 13;
+            this.CPhangkho.Value = 30;
             // 
-            // lbtghangban
+            // label11
             // 
-            this.lbtghangban.Font = new System.Drawing.Font("Quicksand Medium", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbtghangban.ForeColor = System.Drawing.Color.DarkRed;
-            this.lbtghangban.Location = new System.Drawing.Point(27, 83);
-            this.lbtghangban.Name = "lbtghangban";
-            this.lbtghangban.Size = new System.Drawing.Size(124, 30);
-            this.lbtghangban.TabIndex = 29;
-            this.lbtghangban.Text = "Tăng";
-            this.lbtghangban.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Quicksand", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.ForeColor = System.Drawing.Color.Black;
+            this.label11.Location = new System.Drawing.Point(47, 48);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(93, 26);
+            this.label11.TabIndex = 29;
+            this.label11.Text = "trong kho";
             // 
             // FormDoanhThu
             // 
@@ -555,6 +523,8 @@
             this.panel5.PerformLayout();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -581,14 +551,6 @@
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Panel panel4;
         private Bunifu.Framework.UI.BunifuCircleProgressbar CPloinhuan;
-        private System.Windows.Forms.Label label22;
-        private System.Windows.Forms.Label label21;
-        private Bunifu.Framework.UI.BunifuProgressBar bunifuProgressBar2;
-        private System.Windows.Forms.Label label19;
-        private System.Windows.Forms.Label label20;
-        private Bunifu.Framework.UI.BunifuProgressBar bunifuProgressBar1;
-        private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Label label16;
         private Bunifu.Framework.UI.BunifuCircleProgressbar CPhangban;
@@ -598,5 +560,10 @@
         private System.Windows.Forms.Label lbtongtien;
         private System.Windows.Forms.Label lbtghangban;
         private System.Windows.Forms.Label lbtgloinhuan;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label lbkhotg;
+        private System.Windows.Forms.Label label10;
+        private Bunifu.Framework.UI.BunifuCircleProgressbar CPhangkho;
     }
 }
